@@ -1,0 +1,120 @@
+/* src/components/Reveal.css */
+
+.reveal-section {
+  width: 100%;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden; /* Taaki slide hote waqt scrollbar na aaye */
+}
+
+.reveal-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* =========================================
+   🔥 LAYOUT: Default (Image Left, Text Right)
+   ========================================= */
+.reveal-image-wrapper {
+  width: 50%;
+  /* Pehle image chhupi hogi left me */
+  opacity: 0;
+  transform: translateX(-100px) translateY(30px);
+  transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal-text-wrapper {
+  width: 50%;
+  /* Pehle text chhupa hoga right me */
+  opacity: 0;
+  transform: translateX(100px) translateY(30px);
+  transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+  transition-delay: 0.2s; /* Thoda delay taaki image pehle aaye */
+}
+
+/* =========================================
+   🔥 LAYOUT: Reverse (Text Left, Image Right)
+   ========================================= */
+.reveal-section.reverse .reveal-container {
+  flex-direction: row-reverse;
+}
+
+.reveal-section.reverse .reveal-image-wrapper {
+  transform: translateX(100px) translateY(30px); /* Image right se aayegi */
+}
+
+.reveal-section.reverse .reveal-text-wrapper {
+  transform: translateX(-100px) translateY(30px); /* Text left se aayega */
+}
+
+/* =========================================
+   🔥 ACTIVE STATE (Jab Screen Par Aayega)
+   ========================================= */
+.reveal-section.active .reveal-image-wrapper,
+.reveal-section.active .reveal-text-wrapper {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* =========================================
+   🔥 STYLING (Images & Text)
+   ========================================= */
+.reveal-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.reveal-title {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 400;
+  color: #222;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.reveal-text {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 300;
+  color: #666;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+}
+
+/* =========================================
+   📱 MOBILE RESPONSIVE
+   ========================================= */
+@media (max-width: 768px) {
+  .reveal-section {
+    padding: 50px 20px;
+  }
+
+  .reveal-container {
+    flex-direction: column !important; /* Mobile par sab ek ke niche ek */
+    gap: 30px;
+  }
+
+  .reveal-image-wrapper,
+  .reveal-text-wrapper {
+    width: 100%;
+    /* Mobile par sab niche se (bottom) aayenge */
+    transform: translateY(50px) !important; 
+  }
+
+  .reveal-title {
+    font-size: 26px;
+  }
+
+  .reveal-text {
+    font-size: 15px;
+  }
+}

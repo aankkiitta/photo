@@ -1,0 +1,23 @@
+/* 🔥 GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 !important; /* Force remove margin */
+  padding: 0 !important;
+  overflow-x: hidden; /* Side ki white patti hatane ke liye */
+  background-color: #111111; /* Obsidian Black */
+  font-family: var(--font-sans);
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}

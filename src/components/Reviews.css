@@ -1,0 +1,286 @@
+/* src/pages/Reviews.css */
+
+.reviews-page {
+  width: 100%;
+  /* 🔥 Luxury Theme: Warm Ivory Background */
+  background-color: var(--warm-ivory, #F3EFE7);
+  padding-top: 120px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.full-width-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Header */
+.reviews-header {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reviews-pattern { 
+  width: 220px; 
+  max-width: 80%; 
+  margin-bottom: 10px; 
+  opacity: 0.5;
+  /* Gold tint to pattern */
+  filter: invert(65%) sepia(20%) saturate(500%) hue-rotate(5deg) brightness(90%);
+}
+
+/* 🔥 Headings: Cormorant Garamond (Editorial Serif) */
+.reviews-title { 
+  font-family: var(--font-serif, 'Cormorant Garamond', serif); 
+  font-weight: 500; 
+  font-size: 28px; 
+  letter-spacing: 0.08em; 
+  color: var(--midnight-charcoal, #202329); 
+  margin: 0 0 10px 0; 
+  text-transform: uppercase; 
+}
+
+/* 🔥 Body Text: Manrope (Subtle Gold Accent) */
+.reviews-subtitle { 
+  font-family: var(--font-sans, 'Manrope', sans-serif); 
+  font-size: 11px; 
+  letter-spacing: 0.2em; 
+  text-transform: uppercase;
+  color: var(--champagne-gold, #B69A6A); 
+  margin: 0; 
+  font-weight: 600;
+}
+
+/* Slider Wrapper & Arrows */
+.reviews-slider-wrapper {
+  width: 100%;
+  max-width: 1100px; 
+  position: relative; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 60px; 
+  margin-bottom: 40px;
+}
+
+.reviews-slider-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.reviews-slider-track {
+  display: flex;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  width: 100%;
+}
+
+.review-slide {
+  flex-shrink: 0;
+  padding: 0 15px;
+}
+
+/* 🔥 Review Card (Sharp, Clean, Premium) */
+.review-card {
+  background-color: #FFFFFF; /* White card to pop on Ivory bg */
+  padding: 40px 30px;
+  border: 1px solid var(--stone-grey, #BDB9B0);
+  border-radius: 0; /* ❌ Rounded corners hataye */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.review-card:hover { 
+  transform: translateY(-5px); 
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04); /* Very subtle shadow */
+}
+
+.review-stars { 
+  margin-bottom: 20px; 
+  font-size: 16px; 
+  letter-spacing: 4px; 
+}
+
+.star { 
+  color: var(--stone-grey, #BDB9B0); 
+}
+
+/* 🔥 Subtle Champagne Gold for Stars */
+.star.filled { 
+  color: var(--champagne-gold, #B69A6A); 
+}
+
+.review-text {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 20px;
+  font-style: italic;
+  color: var(--midnight-charcoal, #202329);
+  line-height: 1.6;
+  margin-bottom: 30px;
+  flex-grow: 1;
+}
+
+.review-author-info { 
+  border-top: 1px solid var(--stone-grey, #BDB9B0); 
+  padding-top: 20px; 
+  text-align: center; 
+}
+
+.review-author { 
+  font-family: var(--font-sans, 'Manrope', sans-serif); 
+  font-size: 12px; 
+  font-weight: 600; 
+  color: var(--midnight-charcoal, #202329); 
+  letter-spacing: 0.1em; 
+  text-transform: uppercase; 
+  margin: 0 0 8px 0; 
+}
+
+.review-location { 
+  font-family: var(--font-sans, 'Manrope', sans-serif); 
+  font-size: 10px; 
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--stone-grey, #BDB9B0); 
+  margin: 0; 
+  letter-spacing: 0.1em;
+}
+
+/* 🔥 Arrows Styling */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--midnight-charcoal, #202329) !important; 
+  cursor: pointer;
+  z-index: 999 !important; 
+  padding: 10px;
+  opacity: 0.6 !important; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.slider-arrow svg {
+  width: 40px; 
+  height: 40px;
+  stroke: var(--midnight-charcoal, #202329) !important; 
+  stroke-width: 1.5; /* Thoda patla kiya for elegance */
+}
+
+.slider-arrow:hover:not(:disabled) {
+  transform: translateY(-50%) scale(1.1);
+  opacity: 1 !important;
+}
+
+/* Disabled State */
+.slider-arrow:disabled {
+  color: var(--stone-grey, #BDB9B0) !important;
+  stroke: var(--stone-grey, #BDB9B0) !important;
+  opacity: 0.3 !important; 
+  cursor: not-allowed;
+}
+
+.left-arrow { left: 0px; }
+.right-arrow { right: 0px; }
+
+/* Share Button */
+.share-btn-wrapper {
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+
+/* 🔥 Premium Sharp Button */
+.share-experience-btn {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--warm-ivory, #F3EFE7);
+  background-color: var(--midnight-charcoal, #202329);
+  text-transform: uppercase;
+  border: 1px solid var(--midnight-charcoal, #202329);
+  padding: 14px 40px;
+  border-radius: 0; /* ❌ Gol corners hataye */
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.share-experience-btn:hover { 
+  background-color: transparent; 
+  color: var(--midnight-charcoal, #202329);
+}
+
+/* Reveal Animation */
+.reveal-item { 
+  opacity: 0; 
+  transform: translateY(20px); 
+  transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              transform 1s cubic-bezier(0.2, 0.8, 0.2, 1); 
+}
+
+.reveal-item.animate-in { 
+  opacity: 1; 
+  transform: translateY(0); 
+}
+
+/* =========================================
+   📱 MOBILE VIEW
+   ========================================= */
+@media (max-width: 768px) {
+  .reviews-page { 
+    padding-top: 100px; 
+    padding-bottom: 60px; 
+  }
+  
+  .reviews-title { 
+    font-size: 24px; 
+  }
+  
+  .reviews-pattern { 
+    width: 180px; 
+  }
+  
+  .reviews-subtitle { 
+    font-size: 10px; 
+  }
+  
+  .reviews-slider-wrapper { 
+    padding: 0 30px; 
+  }
+  
+  .review-card { 
+    padding: 30px 20px; 
+  }
+  
+  .review-text {
+    font-size: 18px;
+  }
+
+  .slider-arrow svg {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .left-arrow { left: -10px; }
+  .right-arrow { right: -10px; }
+
+  .share-experience-btn { 
+    padding: 12px 30px; 
+    font-size: 11px; 
+  }
+}

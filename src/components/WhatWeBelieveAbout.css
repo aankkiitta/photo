@@ -1,0 +1,91 @@
+/* src/components/WhatWeBelieveAbout.css */
+
+.believe-about-section {
+  width: 100%;
+  background-color: #F3EFE7; 
+  padding: 80px 20px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Scrollbar se bachne ke liye */
+}
+
+.believe-about-container {
+  max-width: 850px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; 
+}
+
+/* 🔥 Base Transition for Animation */
+.believe-about-divider,
+.believe-about-text {
+  transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* --- INITIAL STATES (Hidden & Shifted) --- */
+.slide-left {
+  opacity: 0;
+  transform: translateX(-60px); /* Left se shuru */
+}
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(60px); /* Right se shuru */
+}
+
+/* 🔥 Staggered Delay (Ek ke baad ek aane ke liye) */
+.believe-about-text.slide-left { transition-delay: 0.2s; }
+.believe-about-text.slide-right { transition-delay: 0.4s; }
+hr.believe-about-divider.slide-right { transition-delay: 0.6s; }
+
+/* --- ACTIVE STATE (Jab Scroll Hoga) --- */
+.believe-about-section.animate-in .believe-about-divider,
+.believe-about-section.animate-in .believe-about-text {
+  opacity: 1;
+  transform: translateX(0); /* Wapas center me */
+}
+
+/* 🔥 Thin Horizontal Lines */
+.believe-about-divider {
+  border: 0;
+  border-top: 1px solid #dcdcdc;
+  margin: 0;
+  width: 100%;
+}
+
+.believe-about-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+  text-align: center; 
+}
+
+.believe-about-text {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  color: #777; 
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* --- Mobile Responsive Styles --- */
+@media (max-width: 768px) {
+  .believe-about-section {
+    padding: 60px 20px;
+  }
+  .believe-about-container {
+    gap: 20px;
+  }
+  .believe-about-text {
+    font-size: 14px; 
+  }
+  
+  /* Mobile par slide distance kam ki hai */
+  .slide-left { transform: translateX(-30px); }
+  .slide-right { transform: translateX(30px); }
+}

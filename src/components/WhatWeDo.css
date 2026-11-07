@@ -1,0 +1,116 @@
+/* src/components/WhatWeDo.css */
+
+.do-section {
+  position: relative;
+  width: 100%;
+  height: 40vh; /* Cinematic height badhaya */
+  min-height: 250px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.do-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  clip-path: inset(0 0 0 0); 
+}
+
+.do-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  /* ❌ filter: grayscale(100%) contrast(1.1); hata diya hai */
+  /* Ab image original colors me dikhegi */
+  z-index: 1;
+}
+
+/* 🔥 Cinematic Overlay */
+.do-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Premium dark gradient for text readability without losing image colors */
+  background: linear-gradient(to bottom, rgba(17, 17, 17, 0.4), rgba(17, 17, 17, 0.6)); 
+  z-index: 2;
+}
+
+@media (min-width: 769px) {
+  .do-background, .do-overlay {
+    background-attachment: fixed; 
+  }
+}
+
+@media (max-width: 768px) {
+  .do-section {
+    height: 200px; 
+    min-height: 200px;
+  }
+
+  .do-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; 
+  }
+  
+  .do-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+.do-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 0 20px;
+  transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(-60px);
+}
+
+.do-section.animate-in .do-content {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 🔥 Title: Cormorant Garamond (Editorial Serif) */
+.do-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif); 
+  font-weight: 500; 
+  font-size: 36px; 
+  letter-spacing: 0.1em; 
+  color: var(--warm-ivory, #F3EFE7); /* Warm Ivory instead of pure white */
+  text-transform: uppercase;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .do-title {
+    font-size: 26px;
+    letter-spacing: 0.05em;
+  }
+  .slide-left {
+    transform: translateX(-30px);
+  }
+}

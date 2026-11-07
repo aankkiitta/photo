@@ -1,0 +1,109 @@
+/* src/components/LoveAboutSection.css */
+
+.love-about-section {
+  width: 100%;
+  background-color: #F3EFE7; 
+  padding: 80px 20px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Taaki slide hote waqt horizontal scrollbar na aaye */
+}
+
+.love-about-container {
+  max-width: 850px; 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; 
+}
+
+/* 🔥 Base Transition for Animation */
+.love-about-divider,
+.love-about-text {
+  transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* =========================================
+   🔥 INITIAL STATES (Hidden & Shifted)
+   ========================================= */
+
+/* Left se aane wale elements */
+.slide-left {
+  opacity: 0;
+  transform: translateX(-60px);
+}
+
+/* Right se aane wale elements */
+.slide-right {
+  opacity: 0;
+  transform: translateX(60px);
+}
+
+/* 🔥 Staggered Delay (Ek ke baad ek aane ke liye) */
+.love-about-text.slide-left { 
+  transition-delay: 0.2s; 
+}
+
+.love-about-text.slide-right { 
+  transition-delay: 0.4s; 
+}
+
+hr.love-about-divider.slide-right { 
+  transition-delay: 0.6s; 
+}
+
+/* =========================================
+   🔥 ACTIVE STATE (Jab Scroll Hoga)
+   ========================================= */
+
+/* Jab .animate-in class lagegi, sab apni original jagah par aayenge */
+.love-about-section.animate-in .love-about-divider,
+.love-about-section.animate-in .love-about-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --- Styling Elements --- */
+
+.love-about-divider {
+  border: 0;
+  border-top: 1px solid #dcdcdc; 
+  margin: 0;
+  width: 100%;
+}
+
+.love-about-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+  text-align: center; 
+}
+
+.love-about-text {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  color: #777;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 768px) {
+  .love-about-section {
+    padding: 60px 20px;
+  }
+  .love-about-container {
+    gap: 20px;
+  }
+  .love-about-text {
+    font-size: 14px; 
+  }
+  
+  /* Mobile par slide distance thodi kam ki hai taaki ajeeb na lage */
+  .slide-left { transform: translateX(-30px); }
+  .slide-right { transform: translateX(30px); }
+}

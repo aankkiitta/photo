@@ -1,0 +1,103 @@
+/* src/pages/Stories.css */
+
+.stories-page {
+  width: 100%;
+  /* 🔥 Luxury Theme: Warm Ivory Background */
+  background-color: var(--warm-ivory, #F3EFE7); 
+  /* Generous spacing for editorial look */
+  padding-top: 120px; 
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Header Section --- */
+.stories-header {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-line {
+  width: 100%;
+  border: 0;
+  /* Subtle Stone Grey line */
+  border-top: 1px solid var(--stone-grey, #BDB9B0);
+  margin: 20px 0;
+  opacity: 0.5;
+}
+
+.header-pattern {
+  width: 220px;
+  max-width: 80%;
+  margin-bottom: 10px; 
+  opacity: 0.5; 
+  /* Gold tint to pattern */
+  filter: invert(65%) sepia(20%) saturate(500%) hue-rotate(5deg) brightness(90%);
+}
+
+/* 🔥 Headings: Cormorant Garamond (Editorial Serif) */
+.stories-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-weight: 400;
+  font-size: 36px; 
+  letter-spacing: 0.1em;
+  color: var(--midnight-charcoal, #202329);
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+
+/* 🔥 Body Text: Manrope (Clean Sans-serif) */
+.stories-subtitle {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 12px;
+  letter-spacing: 0.2em; 
+  text-transform: uppercase;
+  color: var(--champagne-gold, #B69A6A); /* Subtle Gold Accent */
+  margin: 0;
+  font-weight: 500;
+}
+
+/* --- Grid Layout --- */
+.stories-grid {
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 40px; /* Generous spacing between cards */
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+  .stories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stories-page {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  .stories-header {
+    margin-bottom: 40px;
+  }
+
+  .stories-title {
+    font-size: 28px;
+  }
+
+  .stories-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}

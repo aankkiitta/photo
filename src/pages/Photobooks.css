@@ -1,0 +1,132 @@
+/* src/pages/Photobooks.css */
+
+.photobooks-page {
+  width: 100%;
+  /* 🔥 Luxury Theme: Warm Ivory Background */
+  background-color: var(--warm-ivory, #F3EFE7);
+  /* Generous spacing for editorial look */
+  padding-top: 120px; 
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.photobooks-header {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-line {
+  width: 100%;
+  border: 0;
+  /* Subtle Stone Grey line */
+  border-top: 1px solid var(--stone-grey, #BDB9B0);
+  margin: 20px 0;
+  opacity: 0.5;
+}
+
+/* Pattern Styling */
+.photobooks-top-pattern {
+  width: 220px;
+  max-width: 80%;
+  margin-bottom: 10px; 
+  opacity: 0.5; 
+  /* Gold tint to pattern */
+  filter: invert(65%) sepia(20%) saturate(500%) hue-rotate(5deg) brightness(90%);
+}
+
+/* 🔥 Headings: Cormorant Garamond (Editorial Serif) */
+.photobooks-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-weight: 500; 
+  font-size: 28px; /* 🔥 Perfect size */
+  letter-spacing: 0.08em;
+  color: var(--midnight-charcoal, #202329);
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+
+/* 🔥 Body Text: Manrope (Clean Sans-serif) */
+.photobooks-subtitle {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 11px; 
+  letter-spacing: 0.2em; 
+  text-transform: uppercase;
+  color: var(--champagne-gold, #B69A6A); /* Subtle Gold Accent */
+  margin: 0;
+  font-weight: 600;
+}
+
+/* --- Grid Layout --- */
+.photobooks-grid {
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 40px; /* Generous spacing between cards */
+}
+
+/* =========================================
+   🔥 REVEAL ANIMATION (Smooth & Subtle)
+   ========================================= */
+.photobooks-header,
+.photobooks-grid {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.photobooks-page.animate-in .photobooks-header {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.photobooks-page.animate-in .photobooks-grid {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s; 
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+  .photobooks-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .photobooks-page {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  .photobooks-header {
+    margin-bottom: 40px;
+  }
+
+  .photobooks-grid {
+    grid-template-columns: 1fr; 
+    gap: 30px;
+    padding: 0 15px; 
+  }
+  
+  .photobooks-title {
+    font-size: 24px; 
+  }
+  
+  .photobooks-top-pattern {
+    width: 180px;
+  }
+}

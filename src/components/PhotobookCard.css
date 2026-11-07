@@ -1,0 +1,88 @@
+.photobook-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer; 
+}
+
+.photobook-link {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photobook-image-wrapper {
+  width: 100%;
+  aspect-ratio: 3 / 4; 
+  overflow: hidden;
+  margin-bottom: 15px; 
+  position: relative; 
+}
+
+.photobook-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.photobook-hover-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; 
+  transition: opacity 0.4s ease;
+  z-index: 2;
+  pointer-events: none; 
+}
+
+.view-photos-btn {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff; 
+  padding: 10px 20px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transform: translateY(10px); 
+  transition: all 0.4s ease;
+}
+
+.photobook-card:hover .photobook-image { transform: scale(1.05); }
+.photobook-card:hover .photobook-hover-layer { opacity: 1; }
+.photobook-card:hover .view-photos-btn { transform: translateY(0); }
+
+.photobook-title {
+  font-family: var(--font-sans); 
+  font-weight: 300; 
+  font-size: 16px; 
+  letter-spacing: 2.5px; 
+  color: #222222; 
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  padding-top: 5px;
+}
+
+@media (max-width: 600px) {
+  .photobook-image-wrapper {
+    aspect-ratio: 1 / 1; 
+    max-width: 100%; 
+    margin: 0 auto 15px auto; 
+  }
+  
+  .photobook-title {
+    font-size: 15px;
+  }
+}

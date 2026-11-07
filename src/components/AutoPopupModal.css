@@ -1,0 +1,158 @@
+/* src/components/AutoPopupModal.css */
+
+.auto-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  animation: fadeIn 0.3s ease-out;
+  padding: 15px;
+}
+
+.auto-modal-content {
+  background-color: #ffffff; 
+  width: 100%;
+  max-width: 380px; 
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.auto-modal-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: #fff; 
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* 🔥 Top Header Block (Color Changed to #222) */
+.auto-modal-header {
+  background-color: #222222; /* Black/Charcoal */
+  padding: 12px 15px; 
+  text-align: center;
+}
+
+.auto-modal-header h2 {
+  font-family: var(--font-sans);
+  font-size: 16px; 
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Body Content */
+.auto-modal-body {
+  padding: 20px 25px 25px 25px; 
+}
+
+/* Form Styling */
+.auto-popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; 
+}
+
+.popup-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.popup-form-group label {
+  font-family: var(--font-sans);
+  font-size: 10px; 
+  color: #777;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Underline Inputs */
+.popup-form-group input {
+  width: 100%;
+  padding: 5px 0; 
+  font-family: var(--font-sans);
+  font-size: 13px; 
+  color: #333;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #ccc; 
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.popup-form-group input::placeholder {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.popup-form-group input:focus {
+  border-bottom: 1px solid #222222; /* Focus par black line */
+}
+
+/* 🔥 Submit Button (Color Changed to #222) */
+.popup-submit-btn {
+  margin-top: 15px;
+  align-self: center;
+  padding: 10px 35px; 
+  background-color: #222222; /* Black/Charcoal */
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-transform: uppercase;
+}
+
+.popup-submit-btn:hover {
+  background-color: #555555; /* Hover par grey */
+}
+
+/* Success Message */
+.popup-success-msg {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.popup-success-msg h3 {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.popup-success-msg p {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: #666;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

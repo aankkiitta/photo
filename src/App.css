@@ -1,0 +1,9 @@
+/* App Container */
+.App {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #111111; /* Dark background taaki koi white flash na aaye */
+  text-align: left; /* Kai baar text-align: center se bhi gaps dikhte hain */
+}

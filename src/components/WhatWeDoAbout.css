@@ -1,0 +1,126 @@
+.do-about-section {
+  width: 100%;
+  background-color: #F3EFE7;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.do-about-container {
+  max-width: 850px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.do-about-divider,
+.do-about-text {
+  transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(-60px);
+}
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(60px);
+}
+
+.do-about-text.slide-left { transition-delay: 0.2s; }
+.do-about-text.slide-right { transition-delay: 0.4s; }
+hr.do-about-divider.slide-right { transition-delay: 0.6s; }
+
+.do-about-section.animate-in .do-about-divider,
+.do-about-section.animate-in .do-about-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.do-about-divider {
+  border: 0;
+  border-top: 1px solid #dcdcdc;
+  margin: 0;
+  width: 100%;
+}
+
+.do-about-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+
+.do-about-text {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  color: #777;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .do-about-section {
+    padding: 60px 20px;
+  }
+  .do-about-container {
+    gap: 20px;
+  }
+  .do-about-text {
+    font-size: 14px;
+  }
+  .slide-left {
+    transform: translateX(-30px);
+  }
+  .slide-right {
+    transform: translateX(30px);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 🔥 Button Container */
+.do-about-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px; /* Text aur divider se thoda gap */
+  width: 100%;
+  z-index: 10;
+}
+
+/* 🔥 Button Styling */
+.do-about-view-more-btn {
+  display: inline-block;
+  padding: 12px 35px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #222; /* Agar background white hai toh text black */
+  text-decoration: none;
+  border: 1px solid #222;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.do-about-view-more-btn:hover {
+  background-color: #222;
+  color: #fff;
+  border-color: #222;
+}

@@ -1,0 +1,200 @@
+.faq-page {
+  width: 100%;
+  background-color: var(--warm-ivory, #F3EFE7);
+  padding-top: 80px;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.faq-header {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.faq-top-pattern {
+  width: 180px;
+  max-width: 80%;
+  margin-bottom: 5px; 
+  opacity: 0.5;
+  filter: invert(65%) sepia(20%) saturate(500%) hue-rotate(5deg) brightness(90%);
+}
+
+.header-line {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid var(--stone-grey, #BDB9B0);
+  margin: 15px 0;
+  opacity: 0.5;
+}
+
+.faq-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-weight: 500;
+  font-size: 20px; 
+  letter-spacing: 0.08em;
+  color: var(--midnight-charcoal, #202329);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.faq-quote-container {
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 20px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.faq-quote {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif); 
+  font-size: 18px; 
+  font-style: italic;
+  color: var(--midnight-charcoal, #202329); 
+  line-height: 1.4;
+  margin: 0;
+  font-weight: 400;
+}
+
+.faq-list {
+  width: 100%;
+  max-width: 900px; 
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-item {
+  margin-bottom: 25px;
+}
+
+.faq-question {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 13px; /* 🔥 Match kiya */
+  font-weight: 700;
+  color: var(--midnight-charcoal, #202329);
+  margin: 0 0 10px 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.faq-number {
+  color: var(--champagne-gold, #B69A6A);
+  margin-right: 8px;
+  font-weight: 500;
+}
+
+.faq-answer {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 13px; /* 🔥 Match kiya */
+  font-weight: 400;
+  color: #555555; 
+  line-height: 1.7;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.faq-divider {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid var(--stone-grey, #BDB9B0);
+  margin-top: 25px;
+  margin-bottom: 0;
+  opacity: 0.5;
+}
+
+.back-btn {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: var(--midnight-charcoal, #202329);
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid var(--midnight-charcoal, #202329);
+  padding: 10px 30px;
+  background-color: transparent;
+  transition: all 0.4s ease;
+  margin-top: 20px;
+  display: inline-block;
+  border-radius: 0;
+}
+
+.back-btn:hover {
+  background-color: var(--midnight-charcoal, #202329);
+  color: var(--warm-ivory, #F3EFE7);
+}
+
+.reveal-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal-item.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .faq-page {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+  
+  .faq-header {
+    margin-bottom: 20px; 
+  }
+
+  .faq-top-pattern {
+    width: 140px; 
+  }
+  
+  .faq-title { 
+    font-size: 16px; 
+  }
+  
+  .faq-quote { 
+    font-size: 15px; 
+    line-height: 1.3;
+  }
+  
+  .faq-list {
+    padding: 0 15px;
+  }
+
+  .faq-question { 
+    font-size: 12px; /* Mobile me bhi same size */
+    margin-bottom: 8px;
+  }
+  
+  .faq-answer { 
+    font-size: 12px; /* Mobile me bhi same size */
+    line-height: 1.5;
+  }
+  
+  .faq-item {
+    margin-bottom: 20px;
+  }
+  
+  .faq-divider {
+    margin-top: 20px;
+  }
+
+  .back-btn {
+    padding: 8px 20px;
+    font-size: 9px;
+  }
+}

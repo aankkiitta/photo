@@ -1,0 +1,270 @@
+import ReviewModal from "./ReviewModal";
+
+review.js
+
+
+
+const response = await fetch('https://api.fusionstoryproduction.com/api/reviews');
+
+
+
+
+ReviewModal
+
+const response = await fetch('https://api.fusionstoryproduction.com/api/reviews', {
+  method: 'POST',
+  // ...
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+autopopupmodal.jsx
+
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    try {
+      // 🔥 YAHAN CHANGE KARNA HAI 🔥
+      // localhost:5000 ki jagah apna live API URL dalein
+      const response = await fetch('https://api.fusionstoryproduction.com/api/enquiry', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      console.log("Response from server:", data); 
+
+      if (response.ok) {
+        setIsSubmitted(true); 
+      } else {
+        alert(data.message || "Something went wrong!");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to connect to the server.");
+    }
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+  contact.jsx
+
+
+
+
+
+  import React, { useState, useEffect, useRef } from 'react';
+import './Contact.css';
+import pattern from '../assets/pattern.png';
+
+// Reusable Reveal Component
+const RevealSection = ({ children, className = "" }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const domRef = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.unobserve(entry.target); 
+          }
+        });
+      },
+      { threshold: 0.1 } 
+    );
+
+    if (domRef.current) observer.observe(domRef.current);
+    return () => {
+      if (domRef.current) observer.unobserve(domRef.current);
+    };
+  }, []);
+
+  return (
+    <div ref={domRef} className={`reveal-item ${isVisible ? 'animate-in' : ''} ${className}`}>
+      {children}
+    </div>
+  );
+};
+
+const Contact = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: '',
+    eventDetails: '',
+    weddingDates: '',
+    contactNumber: '',
+    email: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    try {
+      // 🔥 Yahan API URL Environment Variable se aa raha hai
+      // (Live par ye automatic api.fusionstoryproduction.com ban jayega)
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      
+      const response = await fetch(`${apiUrl}/api/enquiry`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      console.log("Response from server:", data);
+
+      if (response.ok) {
+        setIsSubmitted(true); 
+      } else {
+        alert(data.message || "Something went wrong!");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to connect to the server.");
+    }
+  };
+
+  return (
+    <div className="contact-page">
+      
+      {/* 1. Header Section */}
+      <RevealSection className="full-width-wrapper">
+        <div className="contact-header"> 
+          <img src={pattern} alt="pattern" className="contact-pattern" />
+          <h1 className="contact-title">CONTACT US</h1>
+        </div>
+      </RevealSection>
+
+      {/* 2. Intro Text Section */}
+      <RevealSection className="full-width-wrapper">
+        <div className="contact-intro">
+          <p>We love making films and are honoured to be considered by you to document your wedding story for posterity.</p>
+          <p>This website best showcases our work - every film, every image and every song here represents who we are and what we stand for.</p>
+          <p>If you would like your wedding story to be filmed by us, grab a cup of coffee and write in every detail you can think of. Tell us your story. This helps us gain insight into your personalities and know you better as people. In fact, some of our best films have started off as chronicles on the keyboard right in front of you.</p>
+          <p>Years later, when you see your films & photographs, not only will you begin to relive the priceless moments of these special days but also see how beautifully and gracefully your love has matured.</p>
+          <p>We would love to curate this film for you as nothing gives us greater pleasure than to make these once-in-a-lifetime films from moments that don't have a second take.</p>
+        </div>
+      </RevealSection>
+
+      {/* 3. Quote Section */}
+      <RevealSection className="full-width-wrapper">
+        <div className="contact-quote-section">
+          <p className="contact-quote">"The Beauty lies in the Details"</p>
+          <p className="contact-author">— FOUNDER, FUSION PRODUCTION STORY</p>
+        </div>
+      </RevealSection>
+
+      {/* 4. FORM SECTION */}
+      <RevealSection className="full-width-wrapper">
+        <div className="contact-form-container">
+          
+          {!isSubmitted ? (
+            <form onSubmit={handleSubmit} className="contact-form">
+              
+              <div className="form-group full-width">
+                <label>NAME (required)</label>
+                <input type="text" name="name" placeholder="Your Name" onChange={handleChange} required />
+              </div>
+
+              <div className="form-group full-width">
+                <label>EVENT DETAILS (required)</label>
+                <textarea name="eventDetails" placeholder="What are the tentative events / functions / timings per day?" onChange={handleChange} required></textarea>
+              </div>
+
+              <div className="form-group full-width">
+                <label>YOUR WEDDING DATES (required)</label>
+                <input type="text" name="weddingDates" placeholder="e.g. Dec 10-12, 2025" onChange={handleChange} required />
+              </div>
+
+              <div className="form-row">
+                <div className="form-group">
+                  <label>CONTACT NUMBER (required)</label>
+                  <input type="tel" name="contactNumber" placeholder="Your Number" onChange={handleChange} required />
+                </div>
+                <div className="form-group">
+                  <label>YOUR EMAIL (required)</label>
+                  <input type="email" name="email" placeholder="Your Email" onChange={handleChange} required />
+                </div>
+              </div>
+
+              <button type="submit" className="submit-btn">Submit</button>
+            </form>
+          ) : (
+            <div className="contact-thankyou-msg">
+              <h2>THANK YOU</h2>
+              <p>We have received your details. We will shortly connect with you.</p>
+            </div>
+          )}
+
+        </div>
+      </RevealSection>
+
+      {/* 5. Address & Contact Info Section */}
+      <RevealSection className="full-width-wrapper">
+        <div className="contact-info-section">
+          
+          <div className="info-block">
+            <h3 className="info-title">INDIA</h3>
+            <p className="info-text">
+              mumbai maharashta<br />
+              dombivli,<br />
+              kalyan (E), Mumbai - 421201
+            </p>
+          </div>
+
+          <div className="info-block">
+            <h3 className="info-title">PHONE</h3>
+            <p className="info-text">
+              <a href="tel:+919820037027">+91 1234567894</a>
+            </p>
+          </div>
+
+          <div className="info-block">
+            <h3 className="info-title">EMAIL</h3>
+            <p className="info-text">
+              <a href="mailto:info@fusionstory.com">info@fusionstory.com</a>
+            </p>
+          </div>
+
+        </div>
+      </RevealSection>
+
+    </div>
+  );
+};
+
+export default Contact;

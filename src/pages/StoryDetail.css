@@ -1,0 +1,305 @@
+/* src/pages/StoryDetail.css */
+
+.story-detail-page {
+  width: 100%;
+  /* 🔥 Luxury Theme: Warm Ivory Background */
+  background-color: var(--warm-ivory, #F3EFE7); 
+  padding-top: 120px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden; 
+}
+
+/* Pattern & Header */
+.detail-pattern { 
+  width: 260px; 
+  max-width: 90%; 
+  margin-bottom: 10px; 
+  opacity: 0.5;
+  /* Gold tint to pattern */
+  filter: invert(65%) sepia(20%) saturate(500%) hue-rotate(5deg) brightness(90%);
+}
+
+.detail-header { 
+  text-align: center; 
+  margin-top: 0px; 
+  margin-bottom: 50px; 
+}
+
+/* 🔥 Title: Cormorant Garamond */
+.detail-title { 
+  font-family: var(--font-serif, 'Cormorant Garamond', serif); 
+  font-size: 32px; 
+  font-weight: 500; 
+  letter-spacing: 0.08em; 
+  color: var(--midnight-charcoal, #202329); 
+  margin: 0 0 10px 0; 
+  text-transform: uppercase; 
+}
+
+/* 🔥 Couple Name: Manrope with Gold Accent */
+.detail-couple { 
+  font-family: var(--font-sans, 'Manrope', sans-serif); 
+  font-size: 13px; 
+  font-weight: 600; 
+  color: var(--champagne-gold, #B69A6A); 
+  margin: 0 0 12px 0; 
+  letter-spacing: 0.15em; 
+  text-transform: uppercase;
+}
+
+.detail-meta { 
+  font-family: var(--font-sans, 'Manrope', sans-serif); 
+  font-size: 11px; 
+  font-weight: 500;
+  color: var(--stone-grey, #BDB9B0); 
+  margin: 0; 
+  letter-spacing: 0.1em; 
+  text-transform: uppercase;
+}
+
+/* Cover Image */
+.detail-cover-wrapper { 
+  width: 100%; 
+  max-width: 1000px; 
+  padding: 0 20px; 
+  margin-bottom: 60px; 
+}
+
+.detail-cover { 
+  width: 100%; 
+  height: auto; 
+  object-fit: cover; 
+  aspect-ratio: 16 / 9; 
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05); /* Subtle premium shadow */
+}
+
+/* Paragraph */
+.detail-text-container { 
+  max-width: 800px; 
+  padding: 0 20px; 
+  text-align: center; 
+  margin-bottom: 50px; 
+}
+
+.detail-paragraph { 
+  font-family: var(--font-sans, 'Manrope', sans-serif); 
+  font-size: 15px; 
+  font-weight: 400; 
+  color: #555555; 
+  line-height: 1.8; 
+  letter-spacing: 0.02em; 
+}
+
+/* Pattern 2 */
+.detail-pattern2-full { 
+  width: 100%; 
+  height: 60px; 
+  background-size: 300px auto; 
+  background-repeat: repeat-x; 
+  background-position: center; 
+  margin-top: 10px; 
+  margin-bottom: 70px; 
+  opacity: 0.3;
+  filter: invert(65%) sepia(20%) saturate(500%) hue-rotate(5deg) brightness(90%);
+}
+
+/* Gallery Container */
+.story-gallery-container {
+  width: 100%;
+  max-width: 1000px; 
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column; 
+  gap: 60px; 
+  margin-bottom: 80px;
+}
+
+.gallery-section { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  width: 100%; 
+}
+
+/* 🔥 Gallery Title */
+.gallery-section-title { 
+  font-family: var(--font-serif, 'Cormorant Garamond', serif); 
+  font-weight: 500; 
+  font-size: 24px; 
+  letter-spacing: 0.1em; 
+  color: var(--midnight-charcoal, #202329); 
+  text-transform: uppercase; 
+  margin: 0 0 30px 0; 
+  text-align: center; 
+}
+
+/* Masonry Grid */
+.masonry-grid { 
+  width: 100%; 
+  column-count: 2; 
+  column-gap: 20px; /* Gap thoda badhaya */
+}
+
+.masonry-item { 
+  width: 100%; 
+  margin-bottom: 20px; 
+  break-inside: avoid; 
+  overflow: hidden; 
+  border-radius: 0; /* 🔥 Sharp edges */
+}
+
+.masonry-item img { 
+  width: 100%; 
+  height: auto; 
+  display: block; 
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
+}
+
+.masonry-item:hover img { 
+  transform: scale(1.03); /* Cinematic subtle zoom */
+}
+
+/* 🔥 NEXT / PREVIOUS NAVIGATION */
+.story-navigation {
+  width: 100%;
+  max-width: 1100px;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  border-top: 1px solid var(--stone-grey, #BDB9B0);
+  border-bottom: 1px solid var(--stone-grey, #BDB9B0);
+  margin-top: 20px; 
+  margin-bottom: 40px;
+}
+
+/* =========================================
+   🔥 UNIQUE STORY NAVIGATION 
+   ========================================= */
+.story-bottom-nav {
+  width: 100%;
+  max-width: 1100px;
+  padding: 30px 20px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; 
+  border-top: 1px solid var(--stone-grey, #BDB9B0);
+  border-bottom: 1px solid var(--stone-grey, #BDB9B0);
+  margin-top: 0px; /* Adjust kiya */
+}
+
+.story-nav-item {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: opacity 0.4s ease;
+  max-width: 45%;
+}
+
+.story-nav-item:hover { 
+  opacity: 0.6; 
+}
+
+/* Alignment Left/Right */
+.story-prev-item {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.story-next-item {
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* Text Container */
+.story-nav-text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 🔥 Labels (PREVIOUS / NEXT) with Gold Accent */
+.story-nav-label { 
+  font-family: var(--font-sans, 'Manrope', sans-serif); 
+  font-size: 11px; 
+  font-weight: 600; 
+  letter-spacing: 0.2em; 
+  color: var(--champagne-gold, #B69A6A); 
+  text-transform: uppercase; 
+  margin-bottom: 10px; 
+}
+
+/* 🔥 Titles with Cormorant Garamond */
+.story-nav-title { 
+  font-family: var(--font-serif, 'Cormorant Garamond', serif); 
+  font-size: 22px; 
+  font-weight: 500; 
+  letter-spacing: 0.05em; 
+  color: var(--midnight-charcoal, #202329); 
+  text-transform: uppercase; 
+  line-height: 1.3;
+}
+
+/* =========================================
+   📱 MOBILE VIEW 
+   ========================================= */
+@media (max-width: 768px) {
+  .story-detail-page {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  .detail-title {
+    font-size: 26px;
+  }
+
+  .masonry-grid {
+    column-count: 1; /* Mobile par 1 column (better viewing) */
+  }
+
+  .story-bottom-nav {
+    padding: 20px 15px;
+  }
+
+  .story-nav-item {
+    max-width: 48%; 
+  }
+
+  .story-nav-label { 
+    font-size: 10px; 
+    letter-spacing: 0.1em;
+    margin-bottom: 5px;
+  }
+
+  .story-nav-title { 
+    font-size: 16px; 
+    line-height: 1.3;
+  }
+}
+
+/* =========================================
+   🔥 REVEAL ANIMATION (Smooth & Subtle)
+   ========================================= */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.story-detail-page.animate-in .reveal-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays (Ek ke baad ek smoothly aane ke liye) */
+.story-detail-page.animate-in .detail-pattern { transition-delay: 0.1s; }
+.story-detail-page.animate-in .detail-header { transition-delay: 0.2s; }
+.story-detail-page.animate-in .detail-cover-wrapper { transition-delay: 0.3s; }
+.story-detail-page.animate-in .detail-text-container { transition-delay: 0.4s; }
+.story-detail-page.animate-in .detail-pattern2-full { transition-delay: 0.5s; }
+.story-detail-page.animate-in .story-gallery-container { transition-delay: 0.6s; }
+.story-detail-page.animate-in .story-bottom-nav { transition-delay: 0.7s; }
+.story-detail-page.animate-in .back-btn { transition-delay: 0.8s; }

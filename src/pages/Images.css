@@ -1,0 +1,293 @@
+/* src/pages/Images.css */
+
+.images-page {
+  width: 100%;
+  /* 🔥 Luxury Theme: Warm Ivory Background */
+  background-color: var(--warm-ivory, #F3EFE7); 
+  padding-top: 140px; 
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Header */
+.images-header {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  text-align: center;
+  margin-bottom: 40px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInDown 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.images-top-pattern {
+  width: 220px; /* Photobooks jaisa size */
+  max-width: 80%;
+  margin-bottom: 10px; 
+  opacity: 0.5;
+  /* Gold tint to pattern */
+  filter: invert(65%) sepia(20%) saturate(500%) hue-rotate(5deg) brightness(90%);
+}
+
+/* 🔥 Title: Photobooks jaisa chhota aur premium */
+.images-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-weight: 500; 
+  font-size: 28px; /* 🔥 Size 52px se kam karke 28px kiya */
+  letter-spacing: 0.08em;
+  color: var(--midnight-charcoal, #111111);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   🔥 Filter Buttons (Sharp, Premium)
+   ========================================= */
+.images-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 60px;
+  padding: 0 20px;
+  animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
+  opacity: 0;
+}
+
+.filter-btn {
+  background: transparent;
+  color: var(--midnight-charcoal, #202329);
+  border: 1px solid var(--stone-grey, #BDB9B0);
+  padding: 10px 24px;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 0; 
+  transition: all 0.4s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--midnight-charcoal, #202329);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.filter-btn.active {
+  background-color: var(--midnight-charcoal, #202329); 
+  color: var(--warm-ivory, #F3EFE7);
+  border-color: var(--midnight-charcoal, #202329);
+}
+
+/* =========================================
+   🔥 MAIN CONTENT WRAPPER & SECTIONS
+   ========================================= */
+.images-content-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 20px;
+  animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s forwards;
+  opacity: 0;
+}
+
+/* Har category ka section */
+.image-section {
+  margin-bottom: 80px; 
+  width: 100%;
+}
+
+/* 🔥 Section Title (WEDDING, COMMERCIALS, etc.) */
+.section-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 26px; /* 🔥 Section titles ko bhi thoda chhota kiya */
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--midnight-charcoal, #202329);
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Title ke aage piche Gold Lines */
+.section-title::before,
+.section-title::after {
+  content: "";
+  height: 1px;
+  width: 60px;
+  background-color: var(--champagne-gold, #B69A6A);
+  margin: 0 25px;
+  opacity: 0.6;
+}
+
+/* =========================================
+   🔥 Grid Layout (4 Columns, Tall Images)
+   ========================================= */
+.images-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 30px; 
+}
+
+/* Simple Image Card */
+.image-card {
+  width: 100%;
+  aspect-ratio: 3 / 4; 
+  overflow: hidden;
+  cursor: pointer;
+  background-color: var(--stone-grey, #BDB9B0); 
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.image-card:hover img {
+  transform: scale(1.03); 
+}
+
+/* No Images Message */
+.no-images-msg {
+  width: 100%;
+  text-align: center;
+  color: var(--stone-grey, #BDB9B0);
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 50px 0;
+}
+
+/* =========================================
+   🔥 ANIMATIONS
+   ========================================= */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   🔥 LIGHTBOX STYLES (Cinematic Dark Mode)
+   ========================================= */
+.lightbox-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background-color: rgba(17, 17, 17, 0.98); 
+  display: flex; align-items: center; justify-content: center;
+  z-index: 9999;
+}
+
+.lightbox-content {
+  max-width: 90vw; max-height: 90vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+
+.lightbox-content img {
+  max-width: 100%; max-height: 85vh; 
+  object-fit: contain;
+  box-shadow: 0 10px 50px rgba(0,0,0,0.8);
+}
+
+/* Insta Link */
+.lightbox-insta-link {
+  margin-top: 25px;
+  color: var(--warm-ivory, #F3EFE7); 
+  background: transparent;
+  border: 1px solid var(--champagne-gold, #B69A6A);
+  padding: 12px 30px; 
+  text-decoration: none; 
+  border-radius: 0; 
+  font-family: var(--font-sans, 'Manrope', sans-serif); 
+  font-size: 12px; 
+  letter-spacing: 0.2em;
+  text-transform: uppercase; 
+  transition: all 0.4s ease;
+}
+.lightbox-insta-link:hover { 
+  background: var(--champagne-gold, #B69A6A); 
+  color: var(--obsidian-black, #111111);
+}
+
+/* Close Button */
+.lightbox-close {
+  position: absolute; top: 30px; right: 40px;
+  background: transparent; border: none; 
+  color: var(--stone-grey, #BDB9B0);
+  font-size: 40px; font-weight: 300; cursor: pointer; z-index: 10000;
+  transition: color 0.3s;
+}
+.lightbox-close:hover { color: var(--warm-ivory, #F3EFE7); }
+
+/* Arrows */
+.lightbox-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: transparent; border: none; 
+  color: var(--stone-grey, #BDB9B0);
+  font-size: 50px; cursor: pointer; z-index: 10000; padding: 20px;
+  transition: color 0.3s; opacity: 0.6;
+}
+.lightbox-arrow:hover { color: var(--warm-ivory, #F3EFE7); opacity: 1; }
+.lightbox-arrow.left { left: 30px; }
+.lightbox-arrow.right { right: 30px; }
+
+/* =========================================
+   📱 RESPONSIVE VIEW
+   ========================================= */
+@media (max-width: 1024px) {
+  .images-grid { 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .images-page { padding-top: 100px; padding-bottom: 60px; }
+  
+  .images-title { font-size: 24px; } /* 🔥 Mobile me bhi photobooks jaisa size */
+  .images-top-pattern { width: 180px; }
+  
+  .images-content-wrapper { padding: 0 15px; }
+  
+  .images-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+  }
+  
+  .section-title {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+  .section-title::before,
+  .section-title::after {
+    width: 30px;
+    margin: 0 15px;
+  }
+  
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 11px;
+  }
+
+  .lightbox-close { font-size: 30px; top: 20px; right: 20px; }
+  .lightbox-arrow { font-size: 30px; }
+  .lightbox-arrow.left { left: 10px; }
+  .lightbox-arrow.right { right: 10px; }
+}

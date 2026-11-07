@@ -1,0 +1,159 @@
+/* src/components/Footer.css */
+
+.site-footer {
+  width: 100%;
+  background-color: #F3EFE7; 
+  padding: 40px 0 30px 0; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden; 
+}
+
+/* 🔥 THE FOOTER PATTERN */
+.footer-pattern-full {
+  width: 100%;
+  height: 60px; 
+  background-size: 300px auto; 
+  background-repeat: repeat-x; 
+  background-position: center;
+  margin-top: 0px;
+  margin-bottom: 40px; 
+  opacity: 0.8;
+}
+
+.footer-container {
+  max-width: 1200px; 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 0 40px; 
+}
+
+/* =========================================
+   FOOTER SOCIAL TEXT
+   ========================================= */
+.footer-social-text {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.footer-social-title {
+  font-family: var(--font-sans); 
+  font-weight: 300;
+  font-size: 22px;
+  letter-spacing: 5px; 
+  color: #333;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+}
+
+.footer-social-subtitle {
+  font-family: var(--font-serif); 
+  font-size: 16px;
+  font-style: italic;
+  color: #777;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* =========================================
+   ICONS CONTAINER
+   ========================================= */
+.footer-socials {
+  display: flex;
+  gap: 25px; 
+  align-items: center;
+}
+
+/* 🔥 Bade Icons */
+.social-link img {
+  width: 45px; /* 🔥 Size badha kar 45px kar diya */
+  height: 45px; 
+  object-fit: contain;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover img {
+  opacity: 0.6; 
+  transform: scale(1.1); 
+}
+
+/* =========================================
+   BOTTOM TEXT
+   ========================================= */
+.footer-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin-top: 20px;
+}
+
+.copyright-text,
+.crafted-text {
+  font-family: var(--font-serif); 
+  font-size: 15px;
+  color: #888;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.crafted-text a {
+  color: #555; 
+  text-decoration: none; 
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.crafted-text a:hover {
+  color: #000; 
+}
+
+/* =========================================
+   📱 MOBILE VIEW
+   ========================================= */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 30px 0 20px 0;
+  }
+
+  .footer-pattern-full {
+    height: 40px; 
+    background-size: 200px auto;
+    margin-bottom: 30px;
+  }
+
+  .footer-container {
+    padding: 0 20px;
+    gap: 20px;
+  }
+  
+  .footer-social-title {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  
+  .footer-social-subtitle {
+    font-size: 14px;
+  }
+
+  /* 🔥 Mobile Icons */
+  .social-link img {
+    width: 35px; /* 🔥 Mobile par bhi bada kiya */
+    height: 35px;
+  }
+
+  .footer-bottom {
+    flex-direction: column; 
+    gap: 15px;
+    text-align: center;
+  }
+
+  .copyright-text,
+  .crafted-text {
+    font-size: 13px;
+  }
+}

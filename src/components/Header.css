@@ -1,0 +1,187 @@
+/* src/components/Header.css */
+
+/* --- Base Styles --- */
+.site-header {
+  width: 100%;
+  padding: 20px 0;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: all 0.4s ease-in-out; 
+  background-color: #F3EFE7; /* Default: Solid Cream for all pages */
+}
+
+/* 🔥 LOGIC: Sirf Home Page par Transparent (Jab scroll na hua ho) */
+.site-header.is-home:not(.scrolled) {
+  background-color: transparent;
+}
+
+/* 🔥 Jab Scroll Ho Jaye (Sticky State) */
+.site-header.scrolled {
+  background-color: #F3EFE7; 
+  padding: 10px 0; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+
+/* Logo Image */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* 🔥 Logo Image ka Size (Color change nahi hoga ab) */
+.header-logo-img {
+  height: 60px; 
+  width: auto;
+  object-fit: contain;
+}
+
+/* Desktop Navigation */
+.desktop-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.desktop-nav a {
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  transition: color 0.3s;
+}
+
+/* 🔥 Text Color: Transparent par White, warna Black */
+.site-header.is-home:not(.scrolled) .desktop-nav a {
+  color: #fff;
+}
+
+.site-header:not(.is-home) .desktop-nav a,
+.site-header.scrolled .desktop-nav a {
+  color: #222;
+}
+
+.desktop-nav a:hover {
+  opacity: 0.7;
+}
+
+/* Hide Mobile Elements on Desktop */
+.mobile-menu-icon {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+/* Bars (Hamburger) */
+.bar {
+  width: 25px;
+  height: 1px;
+  transition: all 0.3s;
+}
+
+/* 🔥 Bars Color: Transparent par White, warna Black */
+.site-header.is-home:not(.scrolled) .bar {
+  background-color: #fff;
+}
+
+.site-header:not(.is-home) .bar,
+.site-header.scrolled .bar {
+  background-color: #222;
+}
+
+
+/* --- Mobile Responsive Styles --- */
+@media (max-width: 900px) {
+  .header-container {
+    padding: 0 20px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: flex;
+  }
+
+  .header-logo-img {
+    height: 50px; /* Mobile par chota */
+  }
+
+  /* 🔥 MOBILE MENU */
+  .mobile-nav {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fbf9f6; 
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+    z-index: 999;
+  }
+
+  .mobile-nav.active {
+    max-height: 500px; 
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+  }
+
+  .mobile-nav ul {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .mobile-nav li a {
+    text-decoration: none; 
+    color: #333 !important; 
+    font-family: var(--font-sans);
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    width: 100%;
+    text-align: center;
+    transition: color 0.3s;
+  }
+
+  .mobile-nav li a:hover {
+    color: #888 !important; 
+  }
+
+  /* Hamburger to X Animation */
+  .bar.open:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+  .bar.open:nth-child(2) {
+    opacity: 0;
+  }
+  .bar.open:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+}

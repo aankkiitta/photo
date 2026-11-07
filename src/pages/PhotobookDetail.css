@@ -1,0 +1,259 @@
+/* src/pages/PhotobookDetail.css */
+
+.photobook-detail-page {
+  width: 100%;
+  /* 🔥 Luxury Theme: Warm Ivory Background */
+  background-color: var(--warm-ivory, #F3EFE7);
+  padding-top: 120px;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* 🔥 Title: Cormorant Garamond */
+.photobook-detail-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif); 
+  font-size: 32px; 
+  font-weight: 500;
+  color: var(--midnight-charcoal, #202329);
+  text-align: center;
+  margin-bottom: 15px; 
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* 🔥 Upar Wala Pattern */
+.top-pattern-img {
+  width: 220px;
+  max-width: 90%;
+  margin-bottom: 20px; 
+  opacity: 0.5;
+  /* Gold tint */
+  filter: invert(65%) sepia(20%) saturate(500%) hue-rotate(5deg) brightness(90%);
+}
+
+/* Slider Section */
+.photobook-slider-section {
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 20px;
+  margin-top: 0px;
+  margin-bottom: 30px; 
+}
+
+.photobook-slider-container {
+  position: relative;
+  width: 100%;
+  height: 85vh; 
+  max-height: 900px; 
+  background-color: var(--obsidian-black, #111111); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08); /* Subtle cinematic shadow */
+}
+
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+/* 🔥 Slider Arrows (Premium & Sharp) */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  border: none;
+  font-size: 40px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.slider-arrow:hover {
+  color: var(--warm-ivory, #F3EFE7);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.left-arrow { left: 20px; }
+.right-arrow { right: 20px; }
+
+/* 🔥 Niche Wala Pattern (Same Size) */
+.bottom-pattern-img {
+  width: 220px; 
+  max-width: 90%;
+  margin-top: 10px; 
+  margin-bottom: 40px; 
+  opacity: 0.5; 
+  filter: invert(65%) sepia(20%) saturate(500%) hue-rotate(5deg) brightness(90%);
+}
+
+/* =========================================
+   UNIQUE PHOTOBOOK NAVIGATION
+   ========================================= */
+.photobook-bottom-nav {
+  width: 100%;
+  max-width: 1100px;
+  padding: 30px 20px; 
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start; 
+  border-top: 1px solid var(--stone-grey, #BDB9B0);
+  border-bottom: 1px solid var(--stone-grey, #BDB9B0);
+  margin-top: 0px; 
+  margin-bottom: 40px; 
+}
+
+.photobook-nav-item {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: opacity 0.4s ease;
+  max-width: 45%; 
+}
+
+.photobook-nav-item:hover { 
+  opacity: 0.6; 
+}
+
+/* Alignment Left/Right */
+.photobook-prev-item {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.photobook-next-item {
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* Text Container */
+.photobook-nav-text { 
+  display: flex; 
+  flex-direction: column; 
+}
+
+/* 🔥 Labels with Gold Accent */
+.photobook-nav-label { 
+  font-family: var(--font-sans, 'Manrope', sans-serif); 
+  font-size: 11px; 
+  font-weight: 600; 
+  letter-spacing: 0.2em; 
+  color: var(--champagne-gold, #B69A6A); 
+  text-transform: uppercase; 
+  margin-bottom: 8px; 
+}
+
+/* 🔥 Titles with Cormorant Garamond */
+.photobook-nav-title { 
+  font-family: var(--font-serif, 'Cormorant Garamond', serif); 
+  font-size: 22px; 
+  font-weight: 500; 
+  letter-spacing: 0.05em; 
+  color: var(--midnight-charcoal, #202329); 
+  text-transform: uppercase; 
+  line-height: 1.3;
+}
+
+/* 🔥 Back Button */
+.back-btn {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--midnight-charcoal, #202329);
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid var(--midnight-charcoal, #202329);
+  border-radius: 0; /* Sharp edges */
+  padding: 14px 40px;
+  background-color: transparent;
+  transition: all 0.4s ease;
+  margin-bottom: 20px;
+}
+
+.back-btn:hover { 
+  background-color: var(--midnight-charcoal, #202329); 
+  color: var(--warm-ivory, #F3EFE7); 
+}
+
+/* =========================================
+   🔥 REVEAL ANIMATION (Smooth & Subtle)
+   ========================================= */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Sequence mein aane ke liye delays */
+.photobook-detail-page.animate-in .photobook-detail-title { transition-delay: 0.1s; }
+.photobook-detail-page.animate-in .top-pattern-img { transition-delay: 0.2s; }
+.photobook-detail-page.animate-in .photobook-slider-section { transition-delay: 0.3s; }
+.photobook-detail-page.animate-in .bottom-pattern-img { transition-delay: 0.4s; }
+.photobook-detail-page.animate-in .photobook-bottom-nav { transition-delay: 0.5s; }
+.photobook-detail-page.animate-in .back-btn { transition-delay: 0.6s; }
+
+/* Jab animate-in class lagegi tab visible hoga */
+.photobook-detail-page.animate-in .reveal-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   📱 MOBILE VIEW
+   ========================================= */
+@media (max-width: 768px) {
+  .photobook-detail-page {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  .photobook-detail-title { 
+    font-size: 26px; 
+  }
+  
+  /* Dono patterns mobile par same size */
+  .top-pattern-img, 
+  .bottom-pattern-img { 
+    width: 180px; 
+    margin-bottom: 15px;
+  }
+  
+  .photobook-slider-container { 
+    height: 50vh; 
+  } 
+  
+  .slider-arrow { 
+    font-size: 24px; 
+    padding: 10px; 
+  }
+  
+  .left-arrow { left: 10px; }
+  .right-arrow { right: 10px; }
+
+  .photobook-bottom-nav {
+    padding: 25px 15px;
+    margin-bottom: 30px;
+  }
+  
+  .photobook-nav-item {
+    max-width: 48%; 
+  }
+
+  .photobook-nav-title { 
+    font-size: 16px; 
+  }
+  
+  .photobook-nav-label { 
+    font-size: 9px; 
+  }
+}

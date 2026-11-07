@@ -1,0 +1,265 @@
+/* src/pages/Films.css */
+
+.films-page {
+  width: 100%;
+  /* 🔥 Luxury Theme: Warm Ivory Background */
+  background-color: var(--warm-ivory, #F3EFE7); 
+  padding-top: 140px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 🔥 Har Category (TRAILERS, TAILOR COMPLETED) ka container */
+.film-category-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px; /* Generous spacing between sections */
+}
+
+/* Section Header */
+.films-header {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  text-align: center;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-line {
+  width: 100%;
+  border: 0;
+  /* Subtle Stone Grey line */
+  border-top: 1px solid var(--stone-grey, #BDB9B0);
+  margin: 20px 0;
+  opacity: 0.5;
+}
+
+/* 🔥 Category Title: Chhota, Dark, Serif (Photobooks/Images jaisa) */
+.films-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-weight: 500;
+  font-size: 28px;
+  letter-spacing: 0.1em;
+  color: var(--midnight-charcoal, #202329);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Pattern */
+.films-top-pattern {
+  width: 220px;
+  max-width: 80%;
+  margin-bottom: 10px; 
+  opacity: 0.5;
+  /* Gold tint to pattern */
+  filter: invert(65%) sepia(20%) saturate(500%) hue-rotate(5deg) brightness(90%);
+}
+
+/* Grid Layout */
+.films-grid {
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 50px; /* Generous spacing */
+}
+
+/* Card */
+.film-card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+/* Thumbnail */
+.film-thumbnail-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; 
+  overflow: hidden;
+  background-color: var(--midnight-charcoal, #202329);
+}
+
+.film-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* ❌ filter: grayscale(100%); hata diya */
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.film-card:hover .film-thumbnail {
+  transform: scale(1.03); /* Subtle cinematic zoom */
+}
+
+/* Overlay & Play Button */
+.film-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, 0.1); /* Halka dark overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.4s;
+}
+
+.film-card:hover .film-overlay {
+  background-color: rgba(17, 17, 17, 0.3); 
+}
+
+/* 🔥 Premium Play Button */
+.play-btn {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(243, 239, 231, 0.9); /* Warm Ivory with opacity */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--obsidian-black, #111111);
+  padding-left: 5px; 
+  transition: transform 0.4s ease, background-color 0.4s ease;
+}
+
+.film-card:hover .play-btn {
+  transform: scale(1.05);
+  background-color: var(--warm-ivory, #F3EFE7);
+}
+
+/* Card Info */
+.film-info {
+  text-align: center;
+  padding: 25px 0;
+}
+
+/* 🔥 Film Title: Editorial Serif */
+.film-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif); 
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--midnight-charcoal, #202329); 
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em; 
+}
+
+/* 🔥 Film Subtitle: Manrope with Subtle Gold Accent */
+.film-subtitle {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 12px;
+  font-style: normal;
+  color: var(--champagne-gold, #B69A6A); 
+  margin: 0;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* =========================================
+   🔥 VIDEO MODAL (Cinematic Dark Mode)
+   ========================================= */
+.video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(17, 17, 17, 0.98); /* Obsidian Black */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.close-btn {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  background: transparent;
+  border: none;
+  color: var(--stone-grey, #BDB9B0);
+  font-size: 40px;
+  font-weight: 300;
+  cursor: pointer;
+  z-index: 10000;
+  transition: color 0.3s;
+}
+.close-btn:hover {
+  color: var(--warm-ivory, #F3EFE7);
+}
+
+.video-container {
+  width: 90%;
+  max-width: 1200px;
+  aspect-ratio: 16 / 9;
+  background-color: #000;
+  box-shadow: 0 10px 50px rgba(0,0,0,0.8);
+}
+
+/* =========================================
+   🔥 REVEAL ANIMATION (Smooth & Subtle)
+   ========================================= */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal-item.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   📱 MOBILE VIEW
+   ========================================= */
+@media (max-width: 768px) {
+  .films-page {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  .film-category-section { 
+    margin-bottom: 60px; 
+  }
+  
+  .films-grid {
+    grid-template-columns: 1fr; 
+    gap: 40px;
+  }
+  
+  .films-title {
+    font-size: 24px;
+  }
+
+  .film-title { 
+    font-size: 20px; 
+  }
+  
+  .film-subtitle { 
+    font-size: 10px; 
+  }
+  
+  .close-btn { 
+    font-size: 30px; 
+    top: 15px; 
+    right: 20px; 
+  }
+
+  .films-top-pattern {
+    width: 180px;
+  }
+}

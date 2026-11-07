@@ -1,0 +1,122 @@
+/* src/pages/PreWedding.css */
+
+.prewedding-page {
+  width: 100%;
+  /* 🔥 Luxury Theme: Warm Ivory Background */
+  background-color: var(--warm-ivory, #F3EFE7); 
+  padding-top: 140px; 
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.prewedding-header {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prewedding-top-pattern {
+  width: 220px;
+  max-width: 80%;
+  margin-bottom: 10px;
+  opacity: 0.5;
+  /* Gold tint to pattern */
+  filter: invert(65%) sepia(20%) saturate(500%) hue-rotate(5deg) brightness(90%);
+}
+
+/* 🔥 Title: Cormorant Garamond (Chhota aur Premium) */
+.prewedding-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif); 
+  font-weight: 500;
+  font-size: 28px; /* 🔥 Font size Photobooks/Images jaisa chhota kiya */
+  letter-spacing: 0.1em;
+  color: var(--midnight-charcoal, #202329);
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+
+/* 🔥 Subtitle: Manrope (Clean Sans-serif) */
+.prewedding-subtitle {
+  font-family: var(--font-sans, 'Manrope', sans-serif); 
+  font-size: 12px;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--champagne-gold, #B69A6A); /* Subtle Gold Accent */
+  margin: 0;
+  font-weight: 500;
+}
+
+/* --- Grid Layout --- */
+.prewedding-grid {
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 30px;
+}
+
+/* =========================================
+   🔥 REVEAL ANIMATION (Smooth & Cinematic)
+   ========================================= */
+.prewedding-header,
+.prewedding-grid {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.prewedding-page.animate-in .prewedding-header {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.prewedding-page.animate-in .prewedding-grid {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s; 
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+  .prewedding-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+  }
+}
+
+@media (max-width: 768px) {
+  .prewedding-page { 
+    padding-top: 100px; 
+    padding-bottom: 60px; 
+  }
+  
+  .prewedding-header {
+    margin-bottom: 40px;
+  }
+
+  .prewedding-grid { 
+    grid-template-columns: 1fr; 
+    gap: 20px; 
+    padding: 0 15px; 
+  }
+  
+  .prewedding-title { 
+    font-size: 24px; /* Mobile me bhi chhota aur clean */
+  }
+  
+  .prewedding-top-pattern { 
+    width: 180px; 
+  }
+}

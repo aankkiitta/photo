@@ -1,0 +1,76 @@
+/* src/components/StorySection.css */
+
+.story-section {
+  width: 100%;
+  /* Warm Ivory Background */
+  background-color: #F3EFE7; 
+  /* Padding thodi optimize ki */
+  padding: 80px 20px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
+}
+
+.story-container {
+  max-width: 800px; /* Width thodi kam ki taaki text lines acche se fit hon */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* 🔥 Gap aur kam kiya (20px se) */
+  
+  /* Subtle animation setup */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.story-section.animate-in .story-container {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Heading/Quote: Cormorant Garamond */
+.story-quote {
+  font-family: 'Cormorant Garamond', serif; 
+  font-size: 20px; /* 🔥 Font aur chhota kiya (24px se) */
+  /* Midnight Charcoal for readable high-end text */
+  color: #202329; 
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 400;
+  font-style: italic; 
+}
+
+/* Body/Accent: Manrope with subtle gold accent */
+.story-author {
+  font-family: 'Manrope', sans-serif; 
+  font-size: 9px; /* 🔥 Font aur chhota kiya (10px se) */
+  /* Muted Champagne Gold (Subtle Accent) */
+  color: #B69A6A; 
+  letter-spacing: 0.25em; 
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* --- Mobile Responsive Styles --- */
+@media (max-width: 768px) {
+  .story-section {
+    padding: 50px 20px; 
+  }
+  
+  .story-container {
+    gap: 10px;
+  }
+
+  .story-quote {
+    font-size: 16px; /* 🔥 Mobile me aur chhota kiya (18px se) */
+    line-height: 1.4;
+  }
+  
+  .story-author {
+    font-size: 8px; /* Mobile me bhi chhota kiya */
+    letter-spacing: 0.2em;
+  }
+}

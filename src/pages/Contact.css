@@ -1,0 +1,364 @@
+/* src/pages/Contact.css */
+
+.contact-page {
+  width: 100%;
+  /* 🔥 Luxury Theme: Warm Ivory Background */
+  background-color: var(--warm-ivory, #F3EFE7);
+  padding-top: 120px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* 🔥 Reveal Animation Wrapper */
+.full-width-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* 1. Header Section */
+.contact-header {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  text-align: center;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 🔥 Title: Cormorant Garamond */
+.contact-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-weight: 500;
+  font-size: 28px; 
+  letter-spacing: 0.08em;
+  color: var(--midnight-charcoal, #202329);
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+
+.contact-pattern {
+  width: 220px;
+  max-width: 80%;
+  margin-top: 0px;
+  opacity: 0.5;
+  /* Gold tint to pattern */
+  filter: invert(65%) sepia(20%) saturate(500%) hue-rotate(5deg) brightness(90%);
+}
+
+/* 2. Intro Text (Agar future me use karna ho) */
+.contact-intro {
+  width: 100%;
+  max-width: 800px;
+  padding: 0 20px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.contact-intro p {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 15px;
+  font-weight: 400;
+  color: #555555;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* 3. Quote Section */
+.contact-quote-section {
+  width: 100%;
+  max-width: 900px;
+  padding: 0 20px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+/* 🔥 Quote: Cormorant Garamond (Italic) */
+.contact-quote {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 32px;
+  font-style: italic;
+  color: var(--midnight-charcoal, #202329);
+  margin: 0 0 15px 0;
+  line-height: 1.4;
+}
+
+/* 🔥 Author: Manrope with Gold Accent */
+.contact-author {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--champagne-gold, #B69A6A);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* =========================================
+   🔥 4. FORM STYLING (Premium Box Look)
+   ========================================= */
+.contact-form-container {
+  width: 100%;
+  max-width: 900px;
+  padding: 0 20px;
+  margin-bottom: 80px;
+}
+
+/* 🔥 THE BOX */
+.contact-form-box {
+  background-color: #FFFFFF; /* White background to pop out from Ivory */
+  padding: 60px;
+  border: 1px solid var(--stone-grey, #BDB9B0);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.03); /* Subtle premium shadow */
+  border-radius: 0; /* Sharp edges */
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Generous spacing between fields */
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Labels */
+.form-group label {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--midnight-charcoal, #202329); 
+  text-transform: uppercase;
+}
+
+/* Input Fields */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 16px 20px;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 14px;
+  color: var(--midnight-charcoal, #202329); 
+  background-color: #F9F8F6; /* Off-white inside the white box */
+  border: 1px solid #D1CDC3; 
+  border-radius: 0; /* Sharp edges */
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #999999; 
+  font-weight: 400; 
+}
+
+/* Focus Effect */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  background-color: #FFFFFF;
+  border-color: var(--midnight-charcoal, #202329); 
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+/* Submit Button */
+.submit-btn {
+  align-self: center; 
+  padding: 16px 50px; 
+  margin-top: 10px;
+  background-color: var(--midnight-charcoal, #202329);
+  color: var(--warm-ivory, #F3EFE7);
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 12px; 
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid var(--midnight-charcoal, #202329);
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.submit-btn:hover {
+  background-color: transparent;
+  color: var(--midnight-charcoal, #202329);
+}
+
+/* =========================================
+   🔥 THANK YOU MESSAGE
+   ========================================= */
+.contact-thankyou-msg {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: transparent;
+  animation: fadeInScale 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.contact-thankyou-msg h2 {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--midnight-charcoal, #202329);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.contact-thankyou-msg p {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 15px;
+  color: #555555;
+  margin: 0;
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   🔥 5. CONTACT INFO SECTION
+   ========================================= */
+.contact-info-section {
+  width: 100%;
+  max-width: 700px; 
+  margin: 40px auto 40px auto; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px; 
+  border-top: 1px solid var(--stone-grey, #BDB9B0);
+  padding-top: 50px;
+}
+
+.info-block {
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+}
+
+.info-title {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--champagne-gold, #B69A6A);
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.info-text {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 14px;
+  font-weight: 400;
+  color: #555555;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.info-text a {
+  text-decoration: none;
+  color: #555555;
+  transition: color 0.3s;
+}
+
+.info-text a:hover {
+  color: var(--midnight-charcoal, #202329);
+}
+
+/* =========================================
+   🔥 REVEAL ANIMATION
+   ========================================= */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal-item.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   📱 MOBILE VIEW
+   ========================================= */
+@media (max-width: 768px) {
+  .contact-page {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  .contact-title { 
+    font-size: 24px; 
+  }
+  
+  .contact-pattern { 
+    width: 180px; 
+  } 
+  
+  .contact-quote { 
+    font-size: 26px; 
+  }
+
+  .contact-form-container { 
+    padding: 0 15px; 
+  }
+
+  /* Mobile me box ki padding aur shadow adjust ki */
+  .contact-form-box {
+    padding: 30px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  }
+  
+  .contact-form { 
+    gap: 20px; 
+  }
+
+  .form-row {
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 14px 16px;
+    font-size: 13px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 16px 20px;
+  }
+
+  .contact-info-section {
+    flex-direction: column;
+    margin-top: 30px;
+    padding-top: 40px;
+    gap: 30px;
+  }
+}

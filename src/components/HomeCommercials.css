@@ -1,0 +1,158 @@
+/* src/components/HomeCommercials.css */
+
+.hc-section {
+  width: 100%;
+  /* 🔥 Luxury Theme: Warm Ivory Background */
+  background-color: var(--warm-ivory, #F3EFE7);
+  /* 🔥 Section ki bottom padding manage ki (kyunki button ke niche margin de rahe hain) */
+  padding: 50px 20px 20px 20px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hc-header {
+  text-align: center;
+  margin-bottom: 30px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Pattern Styling */
+.hc-pattern {
+  width: 220px;
+  max-width: 80%;
+  margin-bottom: 5px; 
+  opacity: 0.5; 
+  filter: invert(65%) sepia(20%) saturate(500%) hue-rotate(5deg) brightness(90%);
+}
+
+/* 🔥 Headings: Cormorant Garamond */
+.hc-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-weight: 400;
+  font-size: 36px; 
+  letter-spacing: 0.1em;
+  color: var(--midnight-charcoal, #202329);
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+}
+
+/* 🔥 Body Text: Manrope */
+.hc-subtitle {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 12px;
+  letter-spacing: 0.2em; 
+  text-transform: uppercase;
+  color: var(--stone-grey, #BDB9B0);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Grid Layout (4 Columns) */
+.hc-grid {
+  width: 100%;
+  max-width: 1300px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px; 
+  /* 🔥 Grid ke niche thoda gap badhaya */
+  margin-bottom: 30px; 
+}
+
+.hc-btn-container {
+  margin-top: 0;
+  /* 🔥 BUTTON KE NICHE MARGIN: Taaki next section se gap bane */
+  margin-bottom: 40px;
+}
+
+/* 🔥 Premium Sharp Button */
+.hc-load-btn {
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--midnight-charcoal, #202329);
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid var(--midnight-charcoal, #202329);
+  padding: 14px 40px; 
+  background-color: transparent;
+  transition: all 0.4s ease;
+  border-radius: 0;
+}
+
+.hc-load-btn:hover {
+  background-color: var(--midnight-charcoal, #202329);
+  color: var(--warm-ivory, #F3EFE7);
+}
+
+/* =========================================
+   🔥 REVEAL ANIMATION
+   ========================================= */
+.hc-header,
+.hc-grid,
+.hc-btn-container {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.hc-section.animate-in .hc-header {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.hc-section.animate-in .hc-grid {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s; 
+}
+
+.hc-section.animate-in .hc-btn-container {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s; 
+}
+
+/* =========================================
+   📱 RESPONSIVE VIEW
+   ========================================= */
+@media (max-width: 1024px) {
+  .hc-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hc-section {
+    padding: 40px 15px 10px 15px; 
+  }
+
+  .hc-header {
+    margin-bottom: 20px;
+  }
+
+  .hc-grid {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+
+  .hc-btn-container {
+    margin-bottom: 30px; /* Mobile me bhi button ke niche space */
+  }
+
+  .hc-title {
+    font-size: 26px;
+  }
+  
+  .hc-pattern {
+    width: 160px;
+  }
+}
