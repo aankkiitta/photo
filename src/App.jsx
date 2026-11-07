@@ -5,7 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import ScrollToTop from './components/ScrollToTop';
-import AutoPopupModal from './components/AutoPopupModal'; // 🔥 Import kiya
+import AutoPopupModal from './components/AutoPopupModal'; 
 
 // Pages
 import Home from './pages/Home';
@@ -18,7 +18,7 @@ import Films from './pages/Films';
 import PreWedding from './pages/PreWedding';
 import PreWeddingDetail from './pages/PreWeddingDetail'; 
 import Commercials from './pages/Commercials';
-import FAQ from './pages/FAQ';
+import Faq from './pages/Faq'; // 🔥 FAQ ki jagah Faq kiya (agar file ka naam Faq.jsx hai)
 import Contact from './pages/Contact';
 import About from './pages/About';
 
@@ -44,7 +44,7 @@ const App = () => {
             <Route path="/pre-weddings" element={<PreWedding />} />
             <Route path="/pre-wedding/:slug" element={<PreWeddingDetail />} /> 
             <Route path="/commercials" element={<Commercials />} /> 
-            <Route path="/faq" element={<FAQ />} /> 
+            <Route path="/faq" element={<Faq />} /> {/* 🔥 Yahan bhi Faq kiya */}
             <Route path="/contact" element={<Contact />} /> 
             <Route path="/about" element={<About />} /> 
           </Routes>
@@ -53,7 +53,6 @@ const App = () => {
         <Footer />
         <WhatsAppButton />
         
-        {/* 🔥 Popup yahan add kiya (har page par 5 sec baad aayega) */}
         <AutoPopupModal /> 
       </div>
     </Router>
