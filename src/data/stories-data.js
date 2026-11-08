@@ -2,14 +2,15 @@
 
 const normalizeImageName = (name) => name.toLowerCase().replace(/[^a-z0-9]/g, '');
 
+// 🔥 FIX: Grab all images from src/assets recursively
 const localImageUrls = Object.entries(
-  import.meta.glob('../assets/*.{jpg,jpeg,png,webp,avif}', {
+  import.meta.glob('../assets/**/*.{jpg,jpeg,png,webp,avif}', {
     eager: true,
     query: '?url',
     import: 'default',
   }),
 ).reduce((images, [path, url]) => {
-  const imageName = path.slice(path.lastIndexOf('/') + 1);
+  const imageName = path.split('/').pop();
   const key = normalizeImageName(imageName);
   if (!images.has(key)) images.set(key, url);
   return images;
@@ -21,7 +22,7 @@ export const getImageUrl = (imageName) => {
       return imageName;
     }
     const localImage = localImageUrls.get(normalizeImageName(imageName));
-    // Falls back to /assets/<filename> — served from public/assets on the server
+    // If Vite finds it, it returns the hashed path. If not, fallback to /assets/
     return localImage || `/assets/${encodeURIComponent(imageName)}`;
   }
   return imageName;
