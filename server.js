@@ -11,7 +11,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// 🔥 Frontend (dist folder) ka path nikalne ke liye
+// 🔥 __dirname nikalne ke liye
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -20,12 +20,11 @@ const __dirname = path.dirname(__filename);
 // ==========================================
 const db = mysql.createPool({
     host: process.env.DB_HOST || 'localhost',
-    user: process.env.DB_USER || 'root', 
-    password: process.env.DB_PASSWORD || '', 
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASSWORD || '',
     database: process.env.DB_NAME || 'fusiondb',
 });
 
-// Check Connection
 db.getConnection((err, connection) => {
     if (err) {
         console.error("❌ Database connection failed:", err.message);
@@ -84,13 +83,17 @@ app.post('/api/enquiry', (req, res) => {
 });
 
 // ==========================================
-// 🔥 FRONTEND SERVE KARNE KA CODE (Express 5 ke liye fix)
+// 🔥 STATIC FILES SERVE (ORDER MATTERS!)
 // ==========================================
 
-// Frontend ki build files (dist) serve karne ke liye
+// 1. Serve images/assets from the public folder
+//    This makes /assets/birth1.jpg resolve to public/assets/birth1.jpg
+app.use(express.static(path.join(__dirname, 'public')));
+
+// 2. Serve the built frontend (index.html, JS, CSS)
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// 🔥 Agar koi route API se match nahi karta, toh index.html bhej do
+// 3. SPA fallback — MUST be last
 app.use((req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
@@ -101,4 +104,6 @@ app.use((req, res) => {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`🚀 Server running on port ${PORT}`);
+    console.log(`📁 Serving public from: ${path.join(__dirname, 'public')}`);
+    console.log(`📁 Serving dist from:   ${path.join(__dirname, 'dist')}`);
 });
