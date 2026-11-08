@@ -1,281 +1,250 @@
 // src/data/stories-data.js
 
-// 🔥 FIX: Directly point to the public folder. No Vite hashing needed.
-export const getImageUrl = (imageName) => {
-  if (typeof imageName === 'string') {
-    if (imageName.startsWith('http') || imageName.startsWith('/') || imageName.startsWith('data:')) {
-      return imageName;
-    }
-    return `/assets/${encodeURIComponent(imageName)}`;
-  }
-  return imageName;
-};
-
-const storyRecords = [
+export const storiesData = [
   {
     id: 1,
     slug: "dhruvi-akshar",
-    image: "IMG488.jpg",
+    image: '/assets/img488.jpg', 
     title: "TOLD YOU SO",
     couple: "Dhruvi & Akshar",
     location: "Singapore",
     date: "May 2025",
     description: "Some stories don't begin with coincidence. They begin with intent. Avinash saw Rachel in a friend's photos, felt an inexplicable pull, and when she finally showed up one night, skipped the small talk and said, \"We are going to get married.\"",
-
     gallery: [
       { title: "THE WEDDING", images: [
-        "IMG488.jpg", "IMG489.jpg", "IMG490.jpg", "IMG491.jpg",
-        "IMG492.jpg", "IMG493.jpg", "IMG494.jpg", "IMG495.jpg",
-        "IMG496.jpg", "IMG497.jpg", "IMG498.jpg", "IMG499.jpg",
-        "IMG500.jpg", "IMG501.jpg", "IMG502.jpg", "IMG503.jpg",
-        "IMG504.jpg", "IMG505.jpg", "IMG506.jpg", "IMG507.jpg",
-        "IMG508.jpg", "IMG509.jpg", "IMG510.jpg", "IMG511.jpg",
-        "IMG512.jpg", "IMG513.jpg"
+        '/assets/img488.jpg', '/assets/img489.jpg', '/assets/img490.jpg', '/assets/img491.jpg', 
+        '/assets/img492.jpg', '/assets/img493.jpg', '/assets/img494.jpg', '/assets/img495.jpg', 
+        '/assets/img496.jpg', '/assets/img497.jpg', '/assets/img498.jpg', '/assets/img499.jpg', 
+        '/assets/img500.jpg', '/assets/img501.jpg', '/assets/img502.jpg', '/assets/img503.jpg',
+        '/assets/img504.jpg', '/assets/img505.jpg', '/assets/img506.jpg', '/assets/img507.jpg',
+        '/assets/img508.jpg', '/assets/img509.jpg', '/assets/img510.jpg', '/assets/img511.jpg',
+        '/assets/img512.jpg', '/assets/img513.jpg'
       ] }
     ],
-
     photobookImages: [
-      "IMG488.jpg", "IMG489.jpg", "IMG490.jpg", "IMG491.jpg",
-      "IMG492.jpg", "IMG493.jpg", "IMG494.jpg", "IMG495.jpg",
-      "IMG496.jpg", "IMG497.jpg", "IMG498.jpg", "IMG499.jpg",
-      "IMG500.jpg", "IMG501.jpg", "IMG502.jpg", "IMG503.jpg",
-      "IMG504.jpg", "IMG505.jpg", "IMG506.jpg", "IMG507.jpg",
-      "IMG508.jpg", "IMG509.jpg", "IMG510.jpg", "IMG511.jpg",
-      "IMG512.jpg", "IMG513.jpg"
+        '/assets/img488.jpg', '/assets/img489.jpg', '/assets/img490.jpg', '/assets/img491.jpg', 
+        '/assets/img492.jpg', '/assets/img493.jpg', '/assets/img494.jpg', '/assets/img495.jpg', 
+        '/assets/img496.jpg', '/assets/img497.jpg', '/assets/img498.jpg', '/assets/img499.jpg', 
+        '/assets/img500.jpg', '/assets/img501.jpg', '/assets/img502.jpg', '/assets/img503.jpg',
+        '/assets/img504.jpg', '/assets/img505.jpg', '/assets/img506.jpg', '/assets/img507.jpg',
+        '/assets/img508.jpg', '/assets/img509.jpg', '/assets/img510.jpg', '/assets/img511.jpg',
+        '/assets/img512.jpg', '/assets/img513.jpg'
     ],
-
     categories: [
       { slug: "wedding", title: "WEDDING", images: [
-        "IMG488.jpg", "IMG489.jpg", "IMG490.jpg", "IMG491.jpg",
-        "IMG492.jpg", "IMG493.jpg", "IMG494.jpg", "IMG495.jpg",
-        "IMG496.jpg", "IMG497.jpg", "IMG498.jpg", "IMG499.jpg",
-        "IMG500.jpg", "IMG501.jpg", "IMG502.jpg", "IMG503.jpg",
-        "IMG504.jpg", "IMG505.jpg", "IMG506.jpg", "IMG507.jpg",
-        "IMG508.jpg", "IMG509.jpg", "IMG510.jpg", "IMG511.jpg",
-        "IMG512.jpg", "IMG513.jpg"
+        '/assets/img488.jpg', '/assets/img489.jpg', '/assets/img490.jpg', '/assets/img491.jpg', 
+        '/assets/img492.jpg', '/assets/img493.jpg', '/assets/img494.jpg', '/assets/img495.jpg', 
+        '/assets/img496.jpg', '/assets/img497.jpg', '/assets/img498.jpg', '/assets/img499.jpg', 
+        '/assets/img500.jpg', '/assets/img501.jpg', '/assets/img502.jpg', '/assets/img503.jpg',
+        '/assets/img504.jpg', '/assets/img505.jpg', '/assets/img506.jpg', '/assets/img507.jpg',
+        '/assets/img508.jpg', '/assets/img509.jpg', '/assets/img510.jpg', '/assets/img511.jpg',
+        '/assets/img512.jpg', '/assets/img513.jpg'
       ] }
     ]
   },
   {
     id: 2,
     slug: "namisha-mayur",
-    image: "N_x_M3.jpg",
+    image: '/assets/nm1.jpg', 
     title: "YIN & YANG",
     couple: "Namisha & Mayur",
     location: "Rome, Italy",
     date: "May 2025",
     description: "A decade ago, their paths crossed only briefly, but perhaps time had other plans. Years later, destiny brought them back together, and this time, love arrived with quiet certainty.",
-
     gallery: [
       { title: "PRE-WEDDING", images: [
-        "N_x_M3.jpg", "N_x_M16.jpg", "N_x_M20.jpg", "N_x_M24.jpg",
-        "N_x_M57.jpg", "N_x_M91.jpg", "N_x_M123.jpg", "N_x_M130.jpg",
-        "N_x_M142.jpg", "N_x_M149.jpg", "N_x_M153.jpg", "N_x_M154.jpg",
-        "N_x_M156.jpg", "N_x_M162.jpg", "N_x_M262.jpg", "N_x_M267.jpg",
-        "N_x_M304.jpg", "N_x_M305.jpg", "N_x_M306.jpg", "N_x_M311.jpg",
-        "N_x_M329.jpg", "N_x_M344.jpg", "N_x_M347.jpg", "N_x_M360.jpg",
-        "N_x_M362.jpg", "N_x_M384.jpg", "N_x_M413.jpg", "N_x_M422.jpg",
-        "N_x_M429.jpg"
+        '/assets/nm1.jpg', '/assets/nm2.jpg', '/assets/nm3.jpg', '/assets/nm4.jpg', 
+        '/assets/nm5.jpg', '/assets/nm6.jpg', '/assets/nm7.jpg', '/assets/nm8.jpg', 
+        '/assets/nm9.jpg', '/assets/nm10.jpg', '/assets/nm11.jpg', '/assets/nm12.jpg', 
+        '/assets/nm13.jpg', '/assets/nm14.jpg', '/assets/nm15.jpg', '/assets/nm16.jpg', 
+        '/assets/nm17.jpg', '/assets/nm18.jpg', '/assets/nm19.jpg', '/assets/nm20.jpg', 
+        '/assets/nm21.jpg', '/assets/nm22.jpg', '/assets/nm23.jpg', '/assets/nm24.jpg', 
+        '/assets/nm25.jpg', '/assets/nm26.jpg', '/assets/nm27.jpg'
       ] },
       { title: "THE WEDDING", images: [
-        "N_x_M586.jpg", "N_x_M589.jpg", "N_x_M592.jpg", "N_x_M594.jpg",
-        "N_x_M596.jpg", "N_x_M600.jpg", "N_x_M605.jpg", "N_x_M606.jpg",
-        "N_x_M610.jpg", "N_x_M611.jpg"
+        '/assets/nm586.jpg', '/assets/nm587.jpg', '/assets/nm588.jpg', '/assets/nm589.jpg', 
+        '/assets/nm590.jpg', '/assets/nm591.jpg', '/assets/nm592.jpg', '/assets/nm593.jpg', 
+        '/assets/nm594.jpg', '/assets/nm595.jpg'
       ] }
     ],
-
     photobookImages: [
-      "N_x_M3.jpg", "N_x_M16.jpg", "N_x_M20.jpg", "N_x_M24.jpg",
-      "N_x_M57.jpg", "N_x_M91.jpg", "N_x_M123.jpg", "N_x_M130.jpg",
-      "N_x_M142.jpg", "N_x_M149.jpg", "N_x_M153.jpg", "N_x_M154.jpg",
-      "N_x_M156.jpg", "N_x_M162.jpg", "N_x_M262.jpg", "N_x_M267.jpg",
-      "N_x_M304.jpg", "N_x_M305.jpg", "N_x_M306.jpg", "N_x_M311.jpg",
-      "N_x_M329.jpg", "N_x_M344.jpg", "N_x_M347.jpg", "N_x_M360.jpg",
-      "N_x_M362.jpg", "N_x_M384.jpg", "N_x_M413.jpg", "N_x_M422.jpg",
-      "N_x_M429.jpg", "N_x_M586.jpg", "N_x_M589.jpg", "N_x_M592.jpg",
-      "N_x_M594.jpg", "N_x_M596.jpg", "N_x_M600.jpg", "N_x_M605.jpg",
-      "N_x_M606.jpg", "N_x_M610.jpg", "N_x_M611.jpg"
+        '/assets/nm1.jpg', '/assets/nm2.jpg', '/assets/nm3.jpg', '/assets/nm4.jpg', 
+        '/assets/nm5.jpg', '/assets/nm6.jpg', '/assets/nm7.jpg', '/assets/nm8.jpg', 
+        '/assets/nm9.jpg', '/assets/nm10.jpg', '/assets/nm11.jpg', '/assets/nm12.jpg', 
+        '/assets/nm586.jpg', '/assets/nm587.jpg', '/assets/nm588.jpg', '/assets/nm589.jpg', 
+        '/assets/nm590.jpg'
     ],
-
     categories: [
       { slug: "pre-wedding", title: "PRE-WEDDING", images: [
-        "N_x_M3.jpg", "N_x_M16.jpg", "N_x_M20.jpg", "N_x_M24.jpg",
-        "N_x_M57.jpg", "N_x_M91.jpg", "N_x_M123.jpg", "N_x_M130.jpg",
-        "N_x_M142.jpg", "N_x_M149.jpg", "N_x_M153.jpg", "N_x_M154.jpg",
-        "N_x_M156.jpg", "N_x_M162.jpg", "N_x_M262.jpg", "N_x_M267.jpg",
-        "N_x_M304.jpg", "N_x_M305.jpg", "N_x_M306.jpg", "N_x_M311.jpg",
-        "N_x_M329.jpg", "N_x_M344.jpg", "N_x_M347.jpg", "N_x_M360.jpg",
-        "N_x_M362.jpg", "N_x_M384.jpg", "N_x_M413.jpg", "N_x_M422.jpg",
-        "N_x_M429.jpg"
+        '/assets/nm1.jpg', '/assets/nm2.jpg', '/assets/nm3.jpg', '/assets/nm4.jpg', 
+        '/assets/nm5.jpg', '/assets/nm6.jpg', '/assets/nm7.jpg', '/assets/nm8.jpg', 
+        '/assets/nm9.jpg', '/assets/nm10.jpg', '/assets/nm11.jpg', '/assets/nm12.jpg', 
+        '/assets/nm13.jpg', '/assets/nm14.jpg', '/assets/nm15.jpg', '/assets/nm16.jpg', 
+        '/assets/nm17.jpg', '/assets/nm18.jpg', '/assets/nm19.jpg', '/assets/nm20.jpg', 
+        '/assets/nm21.jpg', '/assets/nm22.jpg', '/assets/nm23.jpg', '/assets/nm24.jpg', 
+        '/assets/nm25.jpg', '/assets/nm26.jpg', '/assets/nm27.jpg'
       ] },
       { slug: "wedding", title: "WEDDING", images: [
-        "N_x_M586.jpg", "N_x_M589.jpg", "N_x_M592.jpg", "N_x_M594.jpg",
-        "N_x_M596.jpg", "N_x_M600.jpg", "N_x_M605.jpg", "N_x_M606.jpg",
-        "N_x_M610.jpg", "N_x_M611.jpg"
+        '/assets/nm586.jpg', '/assets/nm587.jpg', '/assets/nm588.jpg', '/assets/nm589.jpg', 
+        '/assets/nm590.jpg', '/assets/nm591.jpg', '/assets/nm592.jpg', '/assets/nm593.jpg', 
+        '/assets/nm594.jpg', '/assets/nm595.jpg'
       ] }
     ]
   },
   {
     id: 3,
     slug: "richa-aniket",
-    image: "IMGG503.jpg",
+    image: '/assets/img188.jpg',
     title: "THE BEGINNING OF FOREVER",
     couple: "Richa & Aniket",
     location: "India",
     date: "2025",
     description: "Ek nayi shuruaat, ek naya vaada. Richa aur Aniket ki engagement ki khoobsurat yaadein, jahan do parivaar ek saath jud gaye.",
-
     gallery: [
       { title: "THE ENGAGEMENT", images: [
-        "IMGG488.jpg", "IMGG489.jpg", "IMGG490.jpg", "IMGG491.jpg",
-        "IMGG492.jpg", "IMGG493.jpg", "IMGG494.jpg", "IMGG495.jpg",
-        "IMGG496.jpg", "IMGG497.jpg", "IMGG498.jpg", "IMGG499.jpg",
-        "IMGG500.jpg", "IMGG501.jpg", "IMGG502.jpg", "IMGG503.jpg"
+        '/assets/img188.jpg', '/assets/img463.jpg', '/assets/img464.jpg', '/assets/img466.jpg',
+        '/assets/img467.jpg', '/assets/img468.jpg', '/assets/img469.jpg', '/assets/img471.jpg',
+        '/assets/img474.jpg', '/assets/img476.jpg', '/assets/img477.jpg', '/assets/img478.jpg',
+        '/assets/img480.jpg', '/assets/img483.jpg', '/assets/img485.jpg', '/assets/img486.jpg',
+        '/assets/img487.jpg', '/assets/imgg488.jpg', '/assets/imgg489.jpg', '/assets/imgg490.jpg',
+        '/assets/imgg491.jpg', '/assets/imgg492.jpg', '/assets/imgg493.jpg', '/assets/imgg494.jpg',
+        '/assets/imgg495.jpg', '/assets/imgg496.jpg', '/assets/imgg497.jpg', '/assets/imgg498.jpg',
+        '/assets/imgg499.jpg', '/assets/imgg500.jpg', '/assets/imgg501.jpg', '/assets/imgg502.jpg',
+        '/assets/imgg503.jpg'
       ] }
     ],
-
     photobookImages: [
-      "IMGG488.jpg", "IMGG489.jpg", "IMGG490.jpg", "IMGG491.jpg",
-      "IMGG492.jpg", "IMGG493.jpg", "IMGG494.jpg", "IMGG495.jpg",
-      "IMGG496.jpg", "IMGG497.jpg", "IMGG498.jpg", "IMGG499.jpg",
-      "IMGG500.jpg", "IMGG501.jpg", "IMGG502.jpg", "IMGG503.jpg"
+        '/assets/img188.jpg', '/assets/img463.jpg', '/assets/img464.jpg', '/assets/img466.jpg',
+        '/assets/img467.jpg', '/assets/img468.jpg', '/assets/img469.jpg', '/assets/img471.jpg',
+        '/assets/img474.jpg', '/assets/img476.jpg', '/assets/img477.jpg', '/assets/img478.jpg',
+        '/assets/img480.jpg', '/assets/img483.jpg', '/assets/img485.jpg', '/assets/img486.jpg',
+        '/assets/img487.jpg', '/assets/imgg488.jpg', '/assets/imgg489.jpg', '/assets/imgg490.jpg',
+        '/assets/imgg491.jpg', '/assets/imgg492.jpg', '/assets/imgg493.jpg', '/assets/imgg494.jpg',
+        '/assets/imgg495.jpg', '/assets/imgg496.jpg', '/assets/imgg497.jpg', '/assets/imgg498.jpg',
+        '/assets/imgg499.jpg', '/assets/imgg500.jpg', '/assets/imgg501.jpg', '/assets/imgg502.jpg',
+        '/assets/imgg503.jpg'
     ],
-
     categories: [
       { slug: "engagement", title: "ENGAGEMENT", images: [
-        "IMGG488.jpg", "IMGG489.jpg", "IMGG490.jpg", "IMGG491.jpg",
-        "IMGG492.jpg", "IMGG493.jpg", "IMGG494.jpg", "IMGG495.jpg",
-        "IMGG496.jpg", "IMGG497.jpg", "IMGG498.jpg", "IMGG499.jpg",
-        "IMGG500.jpg", "IMGG501.jpg", "IMGG502.jpg", "IMGG503.jpg"
+        '/assets/img188.jpg', '/assets/img463.jpg', '/assets/img464.jpg', '/assets/img466.jpg',
+        '/assets/img467.jpg', '/assets/img468.jpg', '/assets/img469.jpg', '/assets/img471.jpg',
+        '/assets/img474.jpg', '/assets/img476.jpg', '/assets/img477.jpg', '/assets/img478.jpg',
+        '/assets/img480.jpg', '/assets/img483.jpg', '/assets/img485.jpg', '/assets/img486.jpg',
+        '/assets/img487.jpg', '/assets/imgg488.jpg', '/assets/imgg489.jpg', '/assets/imgg490.jpg',
+        '/assets/imgg491.jpg', '/assets/imgg492.jpg', '/assets/imgg493.jpg', '/assets/imgg494.jpg',
+        '/assets/imgg495.jpg', '/assets/imgg496.jpg', '/assets/imgg497.jpg', '/assets/imgg498.jpg',
+        '/assets/imgg499.jpg', '/assets/imgg500.jpg', '/assets/imgg501.jpg', '/assets/imgg502.jpg',
+        '/assets/imgg503.jpg'
       ] }
     ]
   },
   {
     id: 4,
     slug: "priyanka-vijay",
-    image: "Img173.jpg",
+    image: '/assets/img135.jpg', 
     title: "A PROMISE OF FOREVER",
     couple: "Priyanka & Vijay",
     location: "India",
     date: "2025",
     description: "Priyanka aur Vijay ki engagement ki khoobsurat yaadein. Ek nayi shuruaat, jahan do dilon ne ek saath zindagi bitane ka vaada kiya.",
-
     gallery: [
       { title: "THE ENGAGEMENT", images: [
-        "Img135.jpg", "Img136.jpg", "Img138.jpg", "Img139.jpg",
-        "Img140.jpg", "Img141.jpg", "Img143.jpg", "Img144.jpg",
-        "Img145.jpg", "Img146.jpg", "Img149.jpg", "Img150.jpg",
-        "Img152.jpg", "Img153.jpg", "Img154.jpg", "Img157.jpg",
-        "Img158.jpg", "Img160.jpg", "Img162.jpg", "Img163.jpg",
-        "Img164.jpg", "Img165.jpg", "Img167.jpg", "Img168.jpg",
-        "Img169.jpg", "Img170.jpg", "Img171.jpg", "Img172.jpg",
-        "Img173.jpg", "Img174.jpg", "Img175.jpg", "Img176.jpg",
-        "Img177.jpg", "Img178.jpg", "Img179.jpg", "Img180.jpg",
-        "Img181.jpg", "Img182.jpg", "Img183.jpg", "Img184.jpg",
-        "Img185.jpg", "Img186.jpg", "Img187.jpg", "Img188.jpg"
+        '/assets/img135.jpg', '/assets/img136.jpg', '/assets/img138.jpg', '/assets/img139.jpg', 
+        '/assets/img140.jpg', '/assets/img141.jpg', '/assets/img143.jpg', '/assets/img144.jpg', 
+        '/assets/img145.jpg', '/assets/img146.jpg', '/assets/img149.jpg', '/assets/img150.jpg', 
+        '/assets/img152.jpg', '/assets/img153.jpg', '/assets/img154.jpg', '/assets/img157.jpg', 
+        '/assets/img158.jpg', '/assets/img160.jpg', '/assets/img162.jpg', '/assets/img163.jpg', 
+        '/assets/img164.jpg', '/assets/img165.jpg', '/assets/img167.jpg', '/assets/img168.jpg', 
+        '/assets/img169.jpg', '/assets/img170.jpg', '/assets/img171.jpg', '/assets/img172.jpg', 
+        '/assets/img173.jpg', '/assets/img174.jpg', '/assets/img175.jpg', '/assets/img176.jpg', 
+        '/assets/img177.jpg', '/assets/img178.jpg', '/assets/img179.jpg', '/assets/img180.jpg', 
+        '/assets/img181.jpg', '/assets/img182.jpg', '/assets/img183.jpg', '/assets/img184.jpg', 
+        '/assets/img185.jpg', '/assets/img186.jpg', '/assets/img187.jpg'
       ] }
     ],
-
     photobookImages: [
-      "Img135.jpg", "Img136.jpg", "Img138.jpg", "Img139.jpg",
-      "Img140.jpg", "Img141.jpg", "Img143.jpg", "Img144.jpg",
-      "Img145.jpg", "Img146.jpg", "Img149.jpg", "Img150.jpg",
-      "Img152.jpg", "Img153.jpg", "Img154.jpg", "Img157.jpg",
-      "Img158.jpg", "Img160.jpg", "Img162.jpg", "Img163.jpg",
-      "Img164.jpg", "Img165.jpg", "Img167.jpg", "Img168.jpg",
-      "Img169.jpg", "Img170.jpg", "Img171.jpg", "Img172.jpg",
-      "Img173.jpg", "Img174.jpg", "Img175.jpg", "Img176.jpg",
-      "Img177.jpg", "Img178.jpg", "Img179.jpg", "Img180.jpg",
-      "Img181.jpg", "Img182.jpg", "Img183.jpg", "Img184.jpg",
-      "Img185.jpg", "Img186.jpg", "Img187.jpg", "Img188.jpg"
+        '/assets/img135.jpg', '/assets/img136.jpg', '/assets/img138.jpg', '/assets/img139.jpg', 
+        '/assets/img140.jpg', '/assets/img141.jpg', '/assets/img143.jpg', '/assets/img144.jpg', 
+        '/assets/img145.jpg', '/assets/img146.jpg', '/assets/img149.jpg', '/assets/img150.jpg', 
+        '/assets/img152.jpg', '/assets/img153.jpg', '/assets/img154.jpg', '/assets/img157.jpg', 
+        '/assets/img158.jpg', '/assets/img160.jpg', '/assets/img162.jpg', '/assets/img163.jpg', 
+        '/assets/img164.jpg', '/assets/img165.jpg', '/assets/img167.jpg', '/assets/img168.jpg', 
+        '/assets/img169.jpg', '/assets/img170.jpg', '/assets/img171.jpg', '/assets/img172.jpg', 
+        '/assets/img173.jpg', '/assets/img174.jpg', '/assets/img175.jpg', '/assets/img176.jpg', 
+        '/assets/img177.jpg', '/assets/img178.jpg', '/assets/img179.jpg', '/assets/img180.jpg', 
+        '/assets/img181.jpg', '/assets/img182.jpg', '/assets/img183.jpg', '/assets/img184.jpg', 
+        '/assets/img185.jpg', '/assets/img186.jpg', '/assets/img187.jpg'
     ],
-
     categories: [
       { slug: "engagement", title: "ENGAGEMENT", images: [
-        "Img135.jpg", "Img136.jpg", "Img138.jpg", "Img139.jpg",
-        "Img140.jpg", "Img141.jpg", "Img143.jpg", "Img144.jpg",
-        "Img145.jpg", "Img146.jpg", "Img149.jpg", "Img150.jpg",
-        "Img152.jpg", "Img153.jpg", "Img154.jpg", "Img157.jpg",
-        "Img158.jpg", "Img160.jpg", "Img162.jpg", "Img163.jpg",
-        "Img164.jpg", "Img165.jpg", "Img167.jpg", "Img168.jpg",
-        "Img169.jpg", "Img170.jpg", "Img171.jpg", "Img172.jpg",
-        "Img173.jpg", "Img174.jpg", "Img175.jpg", "Img176.jpg",
-        "Img177.jpg", "Img178.jpg", "Img179.jpg", "Img180.jpg",
-        "Img181.jpg", "Img182.jpg", "Img183.jpg", "Img184.jpg",
-        "Img185.jpg", "Img186.jpg", "Img187.jpg", "Img188.jpg"
+        '/assets/img135.jpg', '/assets/img136.jpg', '/assets/img138.jpg', '/assets/img139.jpg', 
+        '/assets/img140.jpg', '/assets/img141.jpg', '/assets/img143.jpg', '/assets/img144.jpg', 
+        '/assets/img145.jpg', '/assets/img146.jpg', '/assets/img149.jpg', '/assets/img150.jpg', 
+        '/assets/img152.jpg', '/assets/img153.jpg', '/assets/img154.jpg', '/assets/img157.jpg', 
+        '/assets/img158.jpg', '/assets/img160.jpg', '/assets/img162.jpg', '/assets/img163.jpg', 
+        '/assets/img164.jpg', '/assets/img165.jpg', '/assets/img167.jpg', '/assets/img168.jpg', 
+        '/assets/img169.jpg', '/assets/img170.jpg', '/assets/img171.jpg', '/assets/img172.jpg', 
+        '/assets/img173.jpg', '/assets/img174.jpg', '/assets/img175.jpg', '/assets/img176.jpg', 
+        '/assets/img177.jpg', '/assets/img178.jpg', '/assets/img179.jpg', '/assets/img180.jpg', 
+        '/assets/img181.jpg', '/assets/img182.jpg', '/assets/img183.jpg', '/assets/img184.jpg', 
+        '/assets/img185.jpg', '/assets/img186.jpg', '/assets/img187.jpg'
       ] }
     ]
   },
   {
     id: 5,
     slug: "chandan-sarita",
-    image: "S_x_C106.jpg",
+    image: '/assets/cs1.jpg', 
     title: "A BEAUTIFUL JOURNEY",
     couple: "Chandan & Sarita",
     location: "India",
     date: "2025",
     description: "Ek khoobsurat safar jo do dilon ko ek saath laya. Chandan aur Sarita ki kahani pyaar, vishwas aur naye shuruaat ki hai.",
-
     gallery: [
       { title: "PRE-WEDDING", images: [
-        "S_x_C106.jpg", "S_x_C109.jpg", "S_x_C114.jpg", "S_x_C115.jpg",
-        "S_x_C119.jpg", "S_x_C135.jpg", "S_x_C137.jpg", "S_x_C140.jpg",
-        "S_x_C150.jpg", "S_x_C152.jpg", "S_x_C158.jpg", "S_x_C159.jpg",
-        "S_x_C160.jpg", "S_x_C161.jpg", "S_x_C165.jpg", "S_x_C180.jpg",
-        "S_x_C181.jpg", "S_x_C182.jpg", "S_x_C184.jpg", "S_x_C199.jpg",
-        "S_x_C211.jpg", "S_x_C213.jpg", "S_x_C216.jpg", "S_x_C219.jpg",
-        "S_x_C220.jpg", "S_x_C224.jpg", "S_x_C226.jpg", "S_x_C230.jpg",
-        "S_x_C231.jpg", "S_x_C294.jpg", "S_x_C299.jpg", "S_x_C321.jpg",
-        "S_x_C325.jpg", "S_x_C335.jpg", "S_x_C336.jpg", "S_x_C350.jpg"
+        '/assets/cs1.jpg', '/assets/cs2.jpg', '/assets/cs3.jpg', '/assets/cs4.jpg', 
+        '/assets/cs5.jpg', '/assets/cs6.jpg', '/assets/cs7.jpg', '/assets/cs8.jpg', 
+        '/assets/cs9.jpg', '/assets/cs10.jpg', '/assets/cs11.jpg', '/assets/cs12.jpg', 
+        '/assets/cs13.jpg', '/assets/cs14.jpg', '/assets/cs15.jpg', '/assets/cs16.jpg', 
+        '/assets/cs17.jpg', '/assets/cs18.jpg', '/assets/cs19.jpg', '/assets/cs20.jpg', 
+        '/assets/cs21.jpg', '/assets/cs22.jpg', '/assets/cs23.jpg', '/assets/cs24.jpg', 
+        '/assets/cs25.jpg', '/assets/cs26.jpg', '/assets/cs27.jpg', '/assets/cs28.jpg', 
+        '/assets/cs29.jpg', '/assets/cs30.jpg', '/assets/cs31.jpg', '/assets/cs32.jpg', 
+        '/assets/cs33.jpg', '/assets/cs34.jpg', '/assets/cs35.jpg'
       ] }
     ],
-
     photobookImages: [
-      "S_x_C106.jpg", "S_x_C109.jpg", "S_x_C114.jpg", "S_x_C115.jpg",
-      "S_x_C119.jpg", "S_x_C135.jpg", "S_x_C137.jpg", "S_x_C140.jpg",
-      "S_x_C150.jpg", "S_x_C152.jpg", "S_x_C158.jpg", "S_x_C159.jpg",
-      "S_x_C160.jpg", "S_x_C161.jpg", "S_x_C165.jpg", "S_x_C180.jpg",
-      "S_x_C181.jpg", "S_x_C182.jpg", "S_x_C184.jpg", "S_x_C199.jpg",
-      "S_x_C211.jpg", "S_x_C213.jpg", "S_x_C216.jpg", "S_x_C219.jpg",
-      "S_x_C220.jpg", "S_x_C224.jpg", "S_x_C226.jpg", "S_x_C230.jpg",
-      "S_x_C231.jpg", "S_x_C294.jpg", "S_x_C299.jpg", "S_x_C321.jpg",
-      "S_x_C325.jpg", "S_x_C335.jpg", "S_x_C336.jpg", "S_x_C350.jpg"
+        '/assets/cs1.jpg', '/assets/cs2.jpg', '/assets/cs3.jpg', '/assets/cs4.jpg', 
+        '/assets/cs5.jpg', '/assets/cs6.jpg', '/assets/cs7.jpg', '/assets/cs8.jpg', 
+        '/assets/cs9.jpg', '/assets/cs10.jpg', '/assets/cs11.jpg', '/assets/cs12.jpg', 
+        '/assets/cs13.jpg', '/assets/cs14.jpg', '/assets/cs15.jpg', '/assets/cs16.jpg', 
+        '/assets/cs17.jpg', '/assets/cs18.jpg', '/assets/cs19.jpg', '/assets/cs20.jpg', 
+        '/assets/cs21.jpg', '/assets/cs22.jpg', '/assets/cs23.jpg', '/assets/cs24.jpg', 
+        '/assets/cs25.jpg', '/assets/cs26.jpg', '/assets/cs27.jpg', '/assets/cs28.jpg', 
+        '/assets/cs29.jpg', '/assets/cs30.jpg', '/assets/cs31.jpg', '/assets/cs32.jpg', 
+        '/assets/cs33.jpg', '/assets/cs34.jpg', '/assets/cs35.jpg'
     ],
-
     categories: [
       { slug: "pre-wedding", title: "PRE-WEDDING", images: [
-        "S_x_C106.jpg", "S_x_C109.jpg", "S_x_C114.jpg", "S_x_C115.jpg",
-        "S_x_C119.jpg", "S_x_C135.jpg", "S_x_C137.jpg", "S_x_C140.jpg",
-        "S_x_C150.jpg", "S_x_C152.jpg", "S_x_C158.jpg", "S_x_C159.jpg",
-        "S_x_C160.jpg", "S_x_C161.jpg", "S_x_C165.jpg", "S_x_C180.jpg",
-        "S_x_C181.jpg", "S_x_C182.jpg", "S_x_C184.jpg", "S_x_C199.jpg",
-        "S_x_C211.jpg", "S_x_C213.jpg", "S_x_C216.jpg", "S_x_C219.jpg",
-        "S_x_C220.jpg", "S_x_C224.jpg", "S_x_C226.jpg", "S_x_C230.jpg",
-        "S_x_C231.jpg", "S_x_C294.jpg", "S_x_C299.jpg", "S_x_C321.jpg",
-        "S_x_C325.jpg", "S_x_C335.jpg", "S_x_C336.jpg", "S_x_C350.jpg"
+        '/assets/cs1.jpg', '/assets/cs2.jpg', '/assets/cs3.jpg', '/assets/cs4.jpg', 
+        '/assets/cs5.jpg', '/assets/cs6.jpg', '/assets/cs7.jpg', '/assets/cs8.jpg', 
+        '/assets/cs9.jpg', '/assets/cs10.jpg', '/assets/cs11.jpg', '/assets/cs12.jpg', 
+        '/assets/cs13.jpg', '/assets/cs14.jpg', '/assets/cs15.jpg', '/assets/cs16.jpg', 
+        '/assets/cs17.jpg', '/assets/cs18.jpg', '/assets/cs19.jpg', '/assets/cs20.jpg', 
+        '/assets/cs21.jpg', '/assets/cs22.jpg', '/assets/cs23.jpg', '/assets/cs24.jpg', 
+        '/assets/cs25.jpg', '/assets/cs26.jpg', '/assets/cs27.jpg', '/assets/cs28.jpg', 
+        '/assets/cs29.jpg', '/assets/cs30.jpg', '/assets/cs31.jpg', '/assets/cs32.jpg', 
+        '/assets/cs33.jpg', '/assets/cs34.jpg', '/assets/cs35.jpg'
       ] }
     ]
   }
 ];
 
-export const storiesData = storyRecords.map((story) => ({
-  ...story,
-  image: getImageUrl(story.image),
-  gallery: story.gallery.map((section) => ({
-    ...section,
-    images: section.images.map(getImageUrl),
-  })),
-  photobookImages: story.photobookImages.map(getImageUrl),
-  categories: story.categories.map((category) => ({
-    ...category,
-    images: category.images.map(getImageUrl),
-  })),
-}));
-
-// 🔥 Home page slider images
+// 🔥 Home page ki slider ke liye images
 export const galleryImagesData = [
-  "IMG488.jpg", "IMG489.jpg", "IMG490.jpg", "IMG491.jpg",
-  "IMG492.jpg", "IMG493.jpg", "IMG494.jpg", "IMG495.jpg",
-  "IMG496.jpg", "IMG497.jpg", "IMG498.jpg", "IMG499.jpg",
-  "IMG500.jpg", "IMG501.jpg"
-].map(getImageUrl);
+  '/assets/img488.jpg',
+  '/assets/nm1.jpg',
+  '/assets/img188.jpg',
+  '/assets/img135.jpg',
+  '/assets/cs1.jpg'
+];

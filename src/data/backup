@@ -1,0 +1,119 @@
+// src/data/stories-data.js
+
+export const storiesData = [
+  {
+    id: 1,
+    slug: "dhruvi-akshar",
+    image: '/assets/IMG-488.jpg',
+    title: "TOLD YOU SO",
+    couple: "Dhruvi & Akshar",
+    location: "Singapore",
+    date: "May 2025",
+    description: "Some stories don't begin with coincidence. They begin with intent...",
+    gallery: [
+      { title: "THE WEDDING", images: ['/assets/IMG-488.jpg', '/assets/IMG-489.jpg', '/assets/book1.jpg'] },
+      { title: "THE RECEPTION", images: ['/assets/IMG-490.jpg', '/assets/IMG-491.jpg', '/assets/book2.jpg'] }
+    ],
+    photobookImages: ['/assets/book1.jpg', '/assets/book2.jpg', '/assets/IMG-488.jpg'],
+    categories: [
+      { slug: "wedding", title: "WEDDING", images: ['/assets/IMG-488.jpg', '/assets/book1.jpg', '/assets/book2.jpg'] },
+      { slug: "reception", title: "RECEPTION", images: ['/assets/IMG-489.jpg', '/assets/book1.jpg', '/assets/book2.jpg'] }
+    ]
+  },
+  {
+    id: 2,
+    slug: "namisha-mayur",
+    image: '/assets/NxM-586.jpg',
+    title: "YIN & YANG",
+    couple: "Namisha & Mayur",
+    location: "Rome, Italy",
+    date: "May 2025",
+    description: "A decade ago, their paths crossed only briefly, but perhaps time had other plans...",
+    gallery: [
+      { title: "PRE-WEDDING", images: ['/assets/NxM-3.jpg', '/assets/book1.jpg', '/assets/book2.jpg'] },
+      { title: "THE WEDDING", images: ['/assets/NxM-586.jpg', '/assets/book1.jpg', '/assets/book2.jpg'] }
+    ],
+    photobookImages: ['/assets/book1.jpg', '/assets/book2.jpg', '/assets/NxM-586.jpg'],
+    categories: [
+      { slug: "pre-wedding", title: "PRE-WEDDING", images: ['/assets/NxM-3.jpg', '/assets/book1.jpg', '/assets/book2.jpg'] },
+      { slug: "wedding", title: "WEDDING", images: ['/assets/NxM-586.jpg', '/assets/book1.jpg', '/assets/book2.jpg'] }
+    ]
+  },
+  {
+    id: 3,
+    slug: "richa-aniket",
+    image: '/assets/IMGG-488.jpg',
+    title: "THE BEGINNING OF FOREVER",
+    couple: "Richa & Aniket",
+    location: "India",
+    date: "2025",
+    description: "Ek nayi shuruaat, ek naya vaada...",
+    gallery: [
+      { title: "THE ENGAGEMENT", images: ['/assets/IMGG-488.jpg', '/assets/book1.jpg', '/assets/book2.jpg'] }
+    ],
+    photobookImages: ['/assets/book1.jpg', '/assets/book2.jpg', '/assets/IMGG-488.jpg'],
+    categories: [
+      { slug: "engagement", title: "ENGAGEMENT", images: ['/assets/IMGG-488.jpg', '/assets/book1.jpg', '/assets/book2.jpg'] }
+    ]
+  },
+  {
+    id: 4,
+    slug: "priyanka-vijay",
+    image: '/assets/IMGG-488.jpg',
+    title: "A PROMISE OF FOREVER",
+    couple: "Priyanka & Vijay",
+    location: "India",
+    date: "2025",
+    description: "Priyanka aur Vijay ki engagement ki khoobsurat yaadein...",
+    gallery: [
+      { title: "THE ENGAGEMENT", images: ['/assets/IMGG-488.jpg', '/assets/book1.jpg', '/assets/book2.jpg'] }
+    ],
+    photobookImages: ['/assets/book1.jpg', '/assets/book2.jpg', '/assets/IMGG-488.jpg'],
+    categories: [
+      { slug: "engagement", title: "ENGAGEMENT", images: ['/assets/IMGG-488.jpg', '/assets/book1.jpg', '/assets/book2.jpg'] }
+    ]
+  },
+  {
+    id: 5,
+    slug: "chandan-sarita",
+    image: '/assets/NxM-586.jpg',
+    title: "A BEAUTIFUL JOURNEY",
+    couple: "Chandan & Sarita",
+    location: "India",
+    date: "2025",
+    description: "Ek khoobsurat safar jo do dilon ko ek saath laya...",
+    gallery: [
+      { title: "PRE-WEDDING", images: ['/assets/NxM-3.jpg', '/assets/book1.jpg', '/assets/book2.jpg'] }
+    ],
+    photobookImages: ['/assets/book1.jpg', '/assets/book2.jpg', '/assets/NxM-586.jpg'],
+    categories: [
+      { slug: "pre-wedding", title: "PRE-WEDDING", images: ['/assets/NxM-3.jpg', '/assets/book1.jpg', '/assets/book2.jpg'] }
+    ]
+  },
+    {
+    id: 6,
+    slug: "real-estate-project",
+    image: '/assets/book1.jpg',
+    title: "LUXURY LIVING",
+    couple: "Real Estate",
+    location: "Mumbai",
+    date: "2025",
+    description: "Showcasing premium properties and architectural marvels.",
+    gallery: [
+      { title: "THE PROPERTY", images: ['/assets/book1.jpg', '/assets/book2.jpg'] }
+    ],
+    photobookImages: ['/assets/book1.jpg', '/assets/book2.jpg'],
+    categories: [
+      { slug: "real-estate", title: "REAL ESTATE", images: ['/assets/book1.jpg', '/assets/book2.jpg'] }
+    ]
+  }
+];
+
+// 🔥 Home page ki slider ke liye images
+export const galleryImagesData = [
+  '/assets/book1.jpg',
+  '/assets/book2.jpg',
+  '/assets/IMG-488.jpg',
+  '/assets/NxM-586.jpg',
+  '/assets/IMGG-488.jpg'
+];
