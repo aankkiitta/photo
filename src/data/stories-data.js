@@ -1,6 +1,7 @@
 // src/data/stories-data.js
 
 const normalizeImageName = (name) => name.toLowerCase().replace(/[^a-z0-9]/g, '');
+
 const localImageUrls = Object.entries(
   import.meta.glob('../assets/*.{jpg,jpeg,png,webp,avif}', {
     eager: true,
@@ -20,6 +21,7 @@ export const getImageUrl = (imageName) => {
       return imageName;
     }
     const localImage = localImageUrls.get(normalizeImageName(imageName));
+    // Falls back to /assets/<filename> — served from public/assets on the server
     return localImage || `/assets/${encodeURIComponent(imageName)}`;
   }
   return imageName;
