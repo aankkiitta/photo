@@ -1,29 +1,13 @@
 // src/data/stories-data.js
 
-const normalizeImageName = (name) => name.toLowerCase().replace(/[^a-z0-9]/g, '');
-
-// 🔥 FIX: Grab all images from src/assets recursively
-const localImageUrls = Object.entries(
-  import.meta.glob('../assets/**/*.{jpg,jpeg,png,webp,avif}', {
-    eager: true,
-    query: '?url',
-    import: 'default',
-  }),
-).reduce((images, [path, url]) => {
-  const imageName = path.split('/').pop();
-  const key = normalizeImageName(imageName);
-  if (!images.has(key)) images.set(key, url);
-  return images;
-}, new Map());
-
+// 🔥 FIX: Point directly to the public folder. 
+// Vite will copy the 'public' folder exactly as-is into the 'dist' folder on build.
 export const getImageUrl = (imageName) => {
   if (typeof imageName === 'string') {
     if (imageName.startsWith('http') || imageName.startsWith('/') || imageName.startsWith('data:')) {
       return imageName;
     }
-    const localImage = localImageUrls.get(normalizeImageName(imageName));
-    // If Vite finds it, it returns the hashed path. If not, fallback to /assets/
-    return localImage || `/assets/${encodeURIComponent(imageName)}`;
+    return `/assets/${encodeURIComponent(imageName)}`;
   }
   return imageName;
 };
