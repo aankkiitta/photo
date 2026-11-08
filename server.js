@@ -11,7 +11,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// 🔥 __dirname nikalne ke liye
+// Paths setup
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -38,7 +38,6 @@ db.getConnection((err, connection) => {
 // ROUTES (API Endpoints)
 // ==========================================
 
-// 1. GET all reviews
 app.get('/api/reviews', (req, res) => {
     const query = "SELECT * FROM reviews ORDER BY created_at DESC";
     db.query(query, (err, results) => {
@@ -50,7 +49,6 @@ app.get('/api/reviews', (req, res) => {
     });
 });
 
-// 2. POST a new review
 app.post('/api/reviews', (req, res) => {
     const { name, reviewText, rating } = req.body;
     if (!name || !reviewText || !rating) {
@@ -66,7 +64,6 @@ app.post('/api/reviews', (req, res) => {
     });
 });
 
-// 3. POST an enquiry
 app.post('/api/enquiry', (req, res) => {
     const { name, eventDetails, weddingDates, contactNumber, email } = req.body;
     if (!name || !eventDetails || !weddingDates || !contactNumber || !email) {
@@ -83,18 +80,24 @@ app.post('/api/enquiry', (req, res) => {
 });
 
 // ==========================================
-// 🔥 STATIC FILES SERVE (ORDER MATTERS!)
+// 🔥 STATIC FILES SERVE
 // ==========================================
 
-// 1. Serve images/assets from the public folder
-//    This makes /assets/birth1.jpg resolve to public/assets/birth1.jpg
+// 1. Serve public folder (just in case you have loose files there)
 app.use(express.static(path.join(__dirname, 'public')));
 
-// 2. Serve the built frontend (index.html, JS, CSS)
+// 2. Serve the built frontend (Vite bundles src/assets into dist/assets)
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// 3. SPA fallback — MUST be last
+// 3. SPA fallback — MUST BE LAST
 app.use((req, res) => {
+    // If the request is looking for an image or asset that doesn't exist, send a 404.
+    // This prevents the 422 error (returning HTML for an image request).
+    if (req.url.match(/\.(jpg|jpeg|png|webp|avif|svg|css|js|ico)$/i)) {
+        return res.status(404).send('File not found');
+    }
+    
+    // For all other routes, serve the React app
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
@@ -104,6 +107,4 @@ app.use((req, res) => {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`🚀 Server running on port ${PORT}`);
-    console.log(`📁 Serving public from: ${path.join(__dirname, 'public')}`);
-    console.log(`📁 Serving dist from:   ${path.join(__dirname, 'dist')}`);
 });
