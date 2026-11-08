@@ -1,7 +1,6 @@
 // src/data/stories-data.js
 
-// 🔥 FIX: Point directly to the public folder. 
-// Vite will copy the 'public' folder exactly as-is into the 'dist' folder on build.
+// 🔥 FIX: Directly point to the public folder. No Vite hashing needed.
 export const getImageUrl = (imageName) => {
   if (typeof imageName === 'string') {
     if (imageName.startsWith('http') || imageName.startsWith('/') || imageName.startsWith('data:')) {
