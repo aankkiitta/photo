@@ -11,7 +11,7 @@ const pattern = '/assets/pattern.png';
 const pattern2 = '/assets/pattern2.png';
 
 // Slider mein sirf 2 images hain
-const slides = [IMG488, IMG488];
+const slides = [heroImage1, heroImage2];
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
