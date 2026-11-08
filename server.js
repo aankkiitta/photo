@@ -83,22 +83,30 @@ app.post('/api/enquiry', (req, res) => {
 // 🔥 STATIC FILES SERVE
 // ==========================================
 
-// 1. Serve public folder (just in case you have loose files there)
+// 1. Serve the public folder (Hostinger usually runs node from inside the build folder, 
+// so we check both current dir and one level up just to be safe).
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
-// 2. Serve the built frontend (Vite bundles src/assets into dist/assets)
+// 2. Serve the built frontend
 app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, '..', 'dist')));
 
 // 3. SPA fallback — MUST BE LAST
 app.use((req, res) => {
-    // If the request is looking for an image or asset that doesn't exist, send a 404.
-    // This prevents the 422 error (returning HTML for an image request).
     if (req.url.match(/\.(jpg|jpeg|png|webp|avif|svg|css|js|ico)$/i)) {
         return res.status(404).send('File not found');
     }
     
-    // For all other routes, serve the React app
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+    // Try to find index.html in current or parent directory
+    const indexPath = path.join(__dirname, 'dist', 'index.html');
+    const fallbackIndexPath = path.join(__dirname, '..', 'dist', 'index.html');
+    
+    res.sendFile(indexPath, (err) => {
+        if (err) {
+            res.sendFile(fallbackIndexPath);
+        }
+    });
 });
 
 // ==========================================
