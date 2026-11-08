@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 import './Hero.css';
 
 // 🔥 Aapke public/assets folder ke exact naam (extension ke saath)
-const heroImage1 = '/assets/heroimage1.jpg'; 
-const heroImage2 = '/assets/heroimage2.jpg'; 
+const heroImage1 = '/assets/IMG488.jpg'; 
+const heroImage2 = '/assets/IMG488.jpg'; 
 // heroImage3 nahi hai, isliye hata diya
 
 const pattern = '/assets/pattern.png'; 
 const pattern2 = '/assets/pattern2.png';
 
 // Slider mein sirf 2 images hain
-const slides = [heroImage1, heroImage2];
+const slides = [IMG488, IMG488];
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
