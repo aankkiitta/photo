@@ -20,7 +20,7 @@ export const getImageUrl = (imageName) => {
       return imageName;
     }
     const localImage = localImageUrls.get(normalizeImageName(imageName));
-    return localImage || `/uploads/${encodeURIComponent(imageName)}`;
+    return localImage || `/assets/${encodeURIComponent(imageName)}`;
   }
   return imageName;
 };
