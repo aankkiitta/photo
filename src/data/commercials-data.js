@@ -38,7 +38,7 @@ export const commercialsData = [
     title: "THE BEGINNING",
     subtitle: "Engagement Shoot", 
     category: "commercials", // 🔥 Category sirf commercials
-    thumbnail: '/assets/book2.jpg',
+    thumbnail: '/assets/IMGG488.jpg',
     instagramUrl: "https://www.instagram.com/"
   }
 ];
