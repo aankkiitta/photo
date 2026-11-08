@@ -9,8 +9,8 @@ export const youtubeIcon = '/assets/youtube.png';
 export const whatsappIcon = '/assets/whatsapp.png';
 
 // Agar aapko hero ya about ki images bhi yahan chahiye toh add kar sakte hain:
-export const heroImage1 = '/assets/Img-173.jpg'; 
-export const heroImage2 = '/assets/NxM-57.jpg'; 
-export const heroImage3 = '/assets/IMG-494.jpg';
+export const heroImage1 = '/assets/Img173.jpg'; 
+export const heroImage2 = '/assets/N_xM_57.jpg'; 
+export const heroImage3 = '/assets/IMG494.jpg';
 export const aboutImage = '/assets/birth1.jpg';
 export const weddingImage = '/assets/wedding.jpg';
